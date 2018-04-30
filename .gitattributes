@@ -1,0 +1,4 @@
+* text=auto
+*.meta linguist-generated=true eol=lf
+*.asset eol=lf
+*.prefab eol=lf

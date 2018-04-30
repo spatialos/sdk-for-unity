@@ -1,0 +1,11 @@
+package improbable.player;
+
+type Joystick {
+    float x_axis = 1;
+    float y_axis = 2;
+}
+
+component PlayerInput {
+    id = 1004;
+    Joystick joystick = 1;
+}
