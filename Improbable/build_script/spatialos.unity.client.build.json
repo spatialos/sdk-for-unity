@@ -1,0 +1,139 @@
+{
+  "tasks": [
+    {
+      "name": "Codegen",
+      "steps": [
+        {
+          "name": "C# standard library",
+          "arguments": [
+            "process_schema",
+            "generate",
+            "--cachePath=.spatialos/cache/schema_codegen_cache_std",
+            "--output=.spatialos/generated/std",
+            "--language=csharp",
+            "--input=../../build/dependencies/schema/standard_library",
+            "--version=13.0.0"
+          ]
+        },
+        {
+          "name": "C#",
+          "arguments": [
+            "process_schema",
+            "generate",
+            "--cachePath=.spatialos/cache/schema_codegen_cache_usr",
+            "--output=.spatialos/generated/usr",
+            "--language=csharp",
+            "--input=../../schema",
+            "--repository=../../build/dependencies/schema",
+            "--version=13.0.0"
+          ]
+        },
+        {
+          "name": "Json AST standard library",
+          "arguments": [
+            "process_schema",
+            "generate",
+            "--cachePath=.spatialos/cache/schema_codegen_cache_json_std",
+            "--output=.spatialos/json/std",
+            "--language=ast_json",
+            "--input=../../build/dependencies/schema/standard_library",
+            "--version=13.0.0"
+          ]
+        },
+        {
+          "name": "Json AST",
+          "arguments": [
+            "process_schema",
+            "generate",
+            "--cachePath=.spatialos/cache/schema_codegen_cache_json_usr",
+            "--output=.spatialos/json/usr",
+            "--language=ast_json",
+            "--input=../../schema",
+            "--repository=../../build/dependencies/schema",
+            "--version=13.0.0"
+          ]
+        },
+        {
+          "name": "Unity Code Generation",
+          "description": "Generates Unity MonoBehaviours, readers and writers from the project schema.",
+          "command": "Improbable/bin/${IMPROBABLE_PLATFORM_NAME}/unity-mono-invoker",
+          "arguments": [
+            "Improbable/bin/UnityCodeGenerator.exe",
+            "--",
+            "--json-dir=.spatialos/json",
+            "--unity-component-output-dir=Assets/Plugins/Improbable/Generated/Components",
+            "--unity-editor-component-output-dir=Assets/Plugins/Improbable/Editor/Generated/Components",
+            "--reader-writer-output-dir=.spatialos/generated/readers_writers"
+          ]
+        },
+        {
+          "name": "Compile generated scripts",
+          "description": "Compiles the generated code into a single DLL for Unity to consume.",
+          "command": "Improbable/bin/${IMPROBABLE_PLATFORM_NAME}/unity-csharp-invoker",
+          "arguments": [
+            "--unity-reference=UnityEngine.dll",
+            "--",
+            "-lib:Assets/Plugins/Improbable/Sdk/Dll",
+            "-reference:Improbable.WorkerSdkCsharp.dll,Improbable.WorkerSdkCsharp.Framework.dll",
+            "-target:library",
+            "-debug",
+            "-unsafe",
+            "-nowarn:1591",
+            "-recurse:.spatialos/generated/*.cs",
+            "-recurse:Assets/Plugins/Improbable/.UnityPartials/*.cs",
+            "-out:Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.dll",
+            "-doc:Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.xml"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Build",
+      "steps": [
+        {
+          "name": "Codegen",
+          "arguments": [
+            "invoke-task",
+            "Codegen"
+          ]
+        },
+        {
+          "name": "UnityClient workers",
+          "command": "Improbable/bin/${IMPROBABLE_PLATFORM_NAME}/unity-invoker",
+          "arguments": [
+            "--",
+            "-batchmode",
+            "-quit",
+            "-nographics",
+            "-logfile",
+            "../../logs/${IMPROBABLE_WORKER_NAME}/unity_invoke.log",
+            "-projectPath",
+            "${IMPROBABLE_WORKER_DIR}",
+            "-executeMethod",
+            "Improbable.Unity.EditorTools.Build.SimpleBuildSystem.Build",
+            "+buildWorkerTypes",
+            "${IMPROBABLE_WORKER_NAME}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clean",
+      "steps": [
+        {
+          "name": "Build artifacts and generated code",
+          "command": "Improbable/bin/${IMPROBABLE_PLATFORM_NAME}/clean",
+          "arguments": [
+            ".spatialos",
+            "Assets/Plugins/Improbable/Generated",
+            "Assets/Plugins/Improbable/Editor/Generated/Components",
+            "Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.dll",
+            "Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.xml",
+            "../../build/assembly/unity",
+            "../../build/assembly/${IMPROBABLE_WORKER_NAME}"
+          ]
+        }
+      ]
+    }
+  ]
+}

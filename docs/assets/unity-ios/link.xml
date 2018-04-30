@@ -1,0 +1,4 @@
+<linker>
+   <assembly fullname="Generated.Code"                  preserve="all"></assembly>
+   <assembly fullname="Improbable.WorkerSdkCsharp"      preserve="all"></assembly>
+</linker>

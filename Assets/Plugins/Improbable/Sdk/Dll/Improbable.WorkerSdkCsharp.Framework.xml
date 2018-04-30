@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Improbable.WorkerSdkCsharp.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:Improbable.Entity.Component.AsyncCommandResponder`3">
+             <summary>
+             Object for sending asynchronous responses to command requests.
+             Upon receiving an incoming command request, a user-defined callback containing a user-submitted strategy for responding to the request is invoked.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.AsyncCommandResponder`3.CommandResponseCallbackAsync">
+             <summary>
+             Type definition: user defined callback function returning a command response given a command request.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.AsyncCommandResponder`3.#ctor(Improbable.Entity.Component.AsyncCommandResponder{`0,`1,`2}.CommandResponseCallbackAsync)">
+             <summary>
+             Constructor method that sets the callback field.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.AsyncCommandResponder`3.SendResponse(Improbable.Entity.Component.ResponseHandle{`0,`1,`2})">
+             <summary>
+             Respond to an incoming command request asynchronously by invoking the user-defined callback.
+             The logic defined in the callback needs to eventually lead to an invokation of responseHandle.Respond().
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.ICommandDescriptor`3">
+             <summary>
+             Interface abstracting evidence class for a command on a component.
+             </summary>
+             <typeparam name="TCommand">Command metaclass</typeparam>
+             <typeparam name="TRequest">Payload of the Command</typeparam>
+             <typeparam name="TReturn">Return type of the Command</typeparam>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandDescriptor`3.CreateRequest">
+             <summary>
+             Creates an ICommandRequest object appropriate for the command's request type. 
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandDescriptor`3.CreateResponse">
+             <summary>
+             Creates an ICommandResponse object appropriate for the command's response type.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandDescriptor`3.ExtractRequest">
+             <summary>
+             Extracts the command response from ICommandResponse object.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandDescriptor`3.ExtractResponse">
+             <summary>
+             Extracts the command response from ICommandResponse object.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandDescriptor`3.CommandName">
+             <summary>
+             Internal name of the command to be invoked.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandDescriptor`3">
+             <summary>
+             Evidence class for a command on a component.
+             </summary>
+             <typeparam name="TCommand"></typeparam>
+             <typeparam name="TRequest">Payload of the Command</typeparam>
+             <typeparam name="TResponse">Return type of the Command</typeparam>
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.TargetComponentId">
+             <summary>
+             ComponentId of the component the command should be invoked on.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.CommandName">
+             <summary>
+             Internal name of the command to be invoked.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandDescriptor`3.CreateRequestDelegate">
+             <summary>
+             Creates an ICommandRequest object appropriate for the command's request type.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandDescriptor`3.CreateResponseDelegate">
+             <summary>
+             Creates an ICommandResponse object appropriate for the command's response type.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandDescriptor`3.ExtractRequestDelegate">
+             <summary>
+             Extracts the command request from ICommandResponse object.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandDescriptor`3.ExtractResponseDelegate">
+             <summary>
+             Extracts the command response from ICommandResponse object.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.CreateRequest">
+             <inheritdoc />
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.CreateResponse">
+             <inheritdoc />
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.ExtractRequest">
+             <inheritdoc />
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandDescriptor`3.ExtractResponse">
+             <inheritdoc />
+            </member>
+        <member name="T:Improbable.Entity.Component.ReaderInterfaceAttribute">
+             <summary>
+             Marks an interface as the Reader Interface for use by visualizers.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.WriterInterfaceAttribute">
+             <summary>
+             Marks an interface as the Writer Interface for use by visualizers.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.ComponentIdAttribute">
+             <summary>
+             Associates a unique component Id with a specific interface.
+             </summary>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentIdAttribute.Id">
+             <summary>
+             The unique identifier.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.ComponentIdAttribute.#ctor(System.UInt32)">
+             <summary>
+             Creates an instance of the attribute.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandCallerInfo">
+             <summary>
+             Metadata for the incoming command request.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandCallerInfo.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+             <summary>
+             Creates an instance of CommandRequestMetadata.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandCallerInfo.CallerAttributeSet">
+             <inheritdoc />
+            </member>
+        <member name="P:Improbable.Entity.Component.CommandCallerInfo.CallerWorkerId">
+             <inheritdoc />
+            </member>
+        <member name="T:Improbable.Entity.Component.ComponentFactoryCallbacks">
+             <summary>
+             Contains callbacks that are invoked in response to events registered by calling
+             IComponentFactory.RegisterWithConnection().
+             </summary>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentFactoryCallbacks.None">
+             <summary>
+             Contains an object with no callbacks specified.
+             </summary>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentFactoryCallbacks.OnComponentAdded">
+             <summary>
+             Invoked after a component has been added.
+             </summary>
+             <remarks>
+             Provides the EntityId the component belongs to, the metaclass of the component,
+             and the concrete implementation of the component.
+             </remarks>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentFactoryCallbacks.OnComponentRemoved">
+             <summary>
+             Invoked after a component has been removed.
+             </summary>
+             <remarks>
+             Provides the EntityId the component belongs to, the metaclass of the component,
+             and the concrete implementation of the component.
+             </remarks>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentFactoryCallbacks.OnAuthorityChanged">
+             <summary>
+             Invoked after authority over the component has been granted or revoked.
+             </summary>
+             <remarks>
+             Provides the EntityId the component belongs to, the metaclass of the component,
+             whether or authority is granted (true) or revoked (false), and the concrete
+             implementation of the component.
+             </remarks>
+            </member>
+        <member name="F:Improbable.Entity.Component.ComponentFactoryCallbacks.OnComponentUpdated">
+             <summary>
+             Invoked after the component has been updated.
+             </summary>
+             <remarks>
+             Provides the EntityId the component belongs to, the meta class of the component,
+             and the concrete implementation of the component.
+             </remarks>
+            </member>
+        <member name="T:Improbable.Entity.Component.EventCallbackHandler`1">
+             <summary>
+             Handles callbacks for events.
+             </summary>
+             <typeparam name="TData"></typeparam>
+            </member>
+        <member name="M:Improbable.Entity.Component.EventCallbackHandler`1.Add(System.Action{`0})">
+             <inheritdoc />
+            </member>
+        <member name="M:Improbable.Entity.Component.EventCallbackHandler`1.Remove(System.Action{`0})">
+             <inheritdoc />
+            </member>
+        <member name="M:Improbable.Entity.Component.EventCallbackHandler`1.InvokeCallbacks(System.Collections.Generic.IList{`0})">
+             <summary>
+             Invokes callbacks with every member of a given object list.
+             </summary>
+             <param name="data"></param>
+            </member>
+        <member name="M:Improbable.Entity.Component.EventCallbackHandler`1.InvokeCallbacks(`0)">
+             <summary>
+             Invokes callbacks with a given data item.
+             </summary>
+             <param name="data"></param>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandResponderWrapper`3">
+             <summary>
+             Object holding an ICommandResponder.
+             Exposed to the user by calling [component name].Writer.On[command name].
+             Defines the user facing interface for registering/deregistering synchronous/asynchronous command response strategies.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponderWrapper`3.RegisterResponse(Improbable.Entity.Component.CommandResponder{`0,`1,`2}.CommandResponseCallback)">
+             <summary>
+             Register a user-defined synchronous callback for responding to an incoming command request.
+             A CommandResponderWrapper can only have one ICommandResponder registered at the same time.
+             </summary>
+             <exception cref="T:System.InvalidOperationException">
+             If a response is already registered.
+             </exception>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponderWrapper`3.RegisterAsyncResponse(Improbable.Entity.Component.AsyncCommandResponder{`0,`1,`2}.CommandResponseCallbackAsync)">
+             <summary>
+             Register a user-defined asynchronous callback for responding to an incoming command request.
+             A CommandResponderWrapper can only have one ICommandResponder registered at the same time.
+             </summary>
+             <exception cref="T:System.InvalidOperationException">
+             If a response is already registered.
+             </exception>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponderWrapper`3.DeregisterResponse">
+             <summary>
+             De-register a user-defined callback for responding to an incoming command request.
+             </summary>
+             <exception cref="T:System.InvalidOperationException">
+             If no response is registered.
+             </exception>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponderWrapper`3.InvokeSendResponse(Improbable.Entity.Component.ResponseHandle{`0,`1,`2})">
+             <summary>
+             Invokes the commandResponder member fields SendResponse() method upon receiving a command request to send a response.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.ICommandResponder`3">
+             <summary>
+             Interface type for objects that respond to incoming command requests given a user-defined callback.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.ICommandResponder`3.SendResponse(Improbable.Entity.Component.ResponseHandle{`0,`1,`2})">
+             <summary>
+             Send a response to an incoming command request given a ResponseHandle corresponding to said request.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.IEventCallbackHandler`1">
+             <summary>
+             Handles callbacks for events.
+             </summary>
+             <typeparam name="TData"></typeparam>
+            </member>
+        <member name="M:Improbable.Entity.Component.IEventCallbackHandler`1.Add(System.Action{`0})">
+             <summary>
+             Registers an event callback.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IEventCallbackHandler`1.Remove(System.Action{`0})">
+             <summary>
+             Removes a registered event callback.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.PropertyCallbackHandler`1">
+             <summary>
+             Handles user-registered callbacks.
+             </summary>
+             <typeparam name="TData"></typeparam>
+            </member>
+        <member name="M:Improbable.Entity.Component.PropertyCallbackHandler`1.#ctor(System.Func{`0})">
+             <summary>
+             Creates an instance of UserCallbackHandler.
+             </summary>
+             <param name="dataValueProvider"></param>
+            </member>
+        <member name="M:Improbable.Entity.Component.PropertyCallbackHandler`1.AddAndInvoke(System.Action{`0})">
+             <inheritdoc />
+            </member>
+        <member name="T:Improbable.Entity.Component.ReferenceCountedMemoiser">
+             <summary>
+             This class provides a stable, reference-counted memoiser. While the reference count for a particular
+             computation is &gt; 0, the returned results of Add and Remove will return the same object as a result.
+             As the reference count is explicit, each call to Add must be matched with a call to Remove. Not calling
+             Remove will cause the class to not clean up its references. Calling Remove without an Add results in an error.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.ICommandCallerInfo">
+             <summary>
+             Metadata for the incoming command request.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandCallerInfo.CallerWorkerId">
+             <summary>
+             WorkerId of the caller.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ICommandCallerInfo.CallerAttributeSet">
+             <summary>
+             Attribute set of the caller.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.IComponentFactory">
+             <summary>
+             An interface that allows for component meta classes to receive events
+             on a per-entity basis.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IComponentFactory.RegisterWithConnection(Improbable.Worker.Connection,Improbable.Worker.Dispatcher,Improbable.Entity.Component.ComponentFactoryCallbacks)">
+             <summary>
+             Call this once for each associated meta class to receive callbacks.
+             These callbacks will be called for the lifetime of the dispatcher object.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IComponentFactory.UnregisterWithConnection(Improbable.Worker.Connection,Improbable.Worker.Dispatcher)">
+             <summary>
+             Call this once for each associated meta class when the connection is disposed of.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IComponentFactory.GetComponentForEntity(Improbable.EntityId)">
+             <summary>
+             Returns an instance of the derived metaclass associated with the entity.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IComponentFactory.DisconnectEventHandlersWithTarget(Improbable.EntityId,System.Object)">
+             <summary>
+             This method no longer does anything and should not be used.
+             Removes all event handlers from the instance associated with entityId.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.IComponentWriter">
+             <summary>
+             An interface for writers, allowing identification of them as an (entity, component) pair.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.IComponentWriter.ComponentId">
+             <summary>
+             The unique component Id.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.IComponentWriter.EntityId">
+             <summary>
+             The entityId associated with the writer instance.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.IPropertyCallbackHandler`1">
+             <summary>
+             Handles property changed callbacks.
+             </summary>
+             <typeparam name="TData"></typeparam>
+            </member>
+        <member name="M:Improbable.Entity.Component.IPropertyCallbackHandler`1.Add(System.Action{`0})">
+             <summary>
+             Registers a property callback.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.IPropertyCallbackHandler`1.AddAndInvoke(System.Action{`0})">
+             <summary>
+             Registers a property callback and invokes it immediately with the current value.
+             </summary>
+             <param name="callback"></param>
+            </member>
+        <member name="M:Improbable.Entity.Component.IPropertyCallbackHandler`1.Remove(System.Action{`0})">
+             <summary>
+             Removes a registered property callback.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandResponder`3">
+             <summary>
+             Object for sending synchronous responses to command requests.
+             Upon receiving an incoming command request, a response is composed with the help of a user-defined callback and sent back to the requester immediately.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.CommandResponder`3.CommandResponseCallback">
+             <summary>
+             Type definition: user defined callback function returning a command response given a command request.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponder`3.#ctor(Improbable.Entity.Component.CommandResponder{`0,`1,`2}.CommandResponseCallback)">
+             <summary>
+             Constructor method that sets the callback field.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.CommandResponder`3.SendResponse(Improbable.Entity.Component.ResponseHandle{`0,`1,`2})">
+             <summary>
+             Respond to an incoming command request synchronously by sending back a command response immediately.
+             </summary>
+            </member>
+        <member name="T:Improbable.Entity.Component.ResponseHandle`3">
+             <summary>
+             Object passed to objects handling the command requests.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ResponseHandle`3.Request">
+             <summary>
+             Payload sent by the entity sending the command.
+             </summary>
+            </member>
+        <member name="P:Improbable.Entity.Component.ResponseHandle`3.CallerInfo">
+             <summary>
+             Metadata for this command invocation instance.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.ResponseHandle`3.#ctor(Improbable.Worker.Connection,Improbable.Worker.CommandRequestOp{`0},Improbable.Entity.Component.ICommandDescriptor{`0,`1,`2},`1)">
+             <summary>
+             Creates a ResponseHandle. Called from generated code.
+             </summary>
+            </member>
+        <member name="M:Improbable.Entity.Component.ResponseHandle`3.Respond(`2)">
+             <summary>
+             Sends the response to command request.
+             </summary>
+             <param name="response"></param>
+            </member>
+    </members>
+</doc>

@@ -1,0 +1,3 @@
+# Needed because we generally ignore folders named build. This makes git not ignore the directory.
+!Build
+
