@@ -32,8 +32,8 @@ See [System requirements: software](docs/get-started/requirements.md#software) f
 **New install:** If you are installing SpatialOS and the SpatialOS Unity SDK for the first time, see:
 [Introduction to the SpatialOS Unity SDK](docs/introduction.md).
 
-**Upgrade and migration:** If you have a version of SpatialOS and the SpatialOS Unity SDK which is earlier than SpatialOS 13.0, you
-have a combined SpatialOS and SpatialOS Unity SDK bundle. To get the separated version, see: [Upgrading to SpatialOS 13.0 and migrating to SpatialOS Unity SDK 1.0.0](docs/migration.md).
+**Upgrade and migration:** If you have a version of SpatialOS which is earlier than 13.0, you have a combined SpatialOS and Unity SDK bundle.
+To get the separated version, see [Upgrading to SpatialOS 13.0 and migrating to the Unity SDK 1.0.0](docs/migration.md).
 
 ## Documentation
 **Unity SDK documentation:** [This repository in GitHub](docs/start-here-table-of-contents.md)
