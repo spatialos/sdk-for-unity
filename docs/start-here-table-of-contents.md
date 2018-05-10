@@ -13,7 +13,10 @@ You can:
  **Note**:
 SpatialOS 13.0 is fine for local development and deployments using the `small` [deployment template (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/reference/file-formats/launch-config#templates), but deployments using larger templates may be unstable.
 
-### Installing and Upgrading
+**License:**
+See the [license](../LICENSE.md).
+
+## Installing and upgrading
 * If you are installing SpatialOS and the SpatialOS Unity SDK for the first time, see:
 [Introduction to the Unity SDK](introduction.md).
 * If you have a version of SpatialOS and the SpatialOS Unity SDK which is earlier than SpatialOS 13.0, you

@@ -4,7 +4,7 @@
 
 * Repository: [github.com/spatialos/UnitySDK](https://github.com/spatialos/UnitySDK)
 * By: [Improbable](https://improbable.io/)
-* License: This repository is subject to [license](LICENSE.md).
+* License: This repository is subject to [license](LICENSE.md)
 
 Use the SpatialOS Unity SDK to create games with persistent online worlds.
 Together with the SpatialOS [spatial CLI](https://docs.improbable.io/reference/13.0/shared/spatial-cli/introduction), the SpatialOS Unity SDK
@@ -24,19 +24,20 @@ See [System requirements: software](docs/get-started/requirements.md#software) f
 
 **Operating system:** [System requirements: Operating systems](docs/get-started/requirements.md#system-requirements#software)
 
-**Hardware:** [System requirements: Hardware]
-(docs/get-started/requirements.md#hardware)
+**Hardware:** [System requirements: Hardware](docs/get-started/requirements.md#hardware)
 
-**Network settings:** [System requirements: Hardware](docs/get-started/requirements.md#network-settings)
+**Network settings:** [System requirements: Network settings](docs/get-started/requirements.md#network-settings)
 
 ## Installing and upgrading
 **New install:** If you are installing SpatialOS and the SpatialOS Unity SDK for the first time, see:
 [Introduction to the SpatialOS Unity SDK](docs/introduction.md).
+
 **Upgrade and migration:** If you have a version of SpatialOS and the SpatialOS Unity SDK which is earlier than SpatialOS 13.0, you
 have a combined SpatialOS and SpatialOS Unity SDK bundle. To get the separated version, see: [Upgrading to SpatialOS 13.0 and migrating to SpatialOS Unity SDK 1.0.0](docs/migration.md).
 
 ## Documentation
 **Unity SDK documentation:** [This repository in GitHub](docs/start-here-table-of-contents.md)
+
 **SpatialOS documentation:** [docs.improbable.io.](https://docs.improbable.io.)
 
 ## Community

@@ -23,22 +23,23 @@ DEALINGS IN THE SOFTWARE.
 
 This licence is governed by the laws of England and Wales and the jurisdiction of the English courts.
 
-## What is this license for?
+## Why yet another license?
 
-This license is intended for use with any source code published by Improbable of projects built on top
-of Improbable’s SpatialOS platform. It is not intended for projects that are not authored or maintained
-by Improbable. If you are authoring such a non-derived project we encourage you to choose the software
-license that best suits your project’s needs.
+We believe that SpatialOS is unique in the capabilities that it gives you access to and our developers have put a
+significant amount of effort in shaping the code that helps you benefit from these capabilities. While we want to
+offer you the results of these efforts freely, we also feel that existing open source licenses do not provide
+the necessary protection against the misuse of our software by competing platforms. The result is this license
+which is as close to the open source spirit as possible while still providing us with the protection that we want.
+
 
 ## Where does this license come from?
 
-This license is similar to the [MIT license](https://opensource.org/licenses/MIT) with the addition of two clauses:
+This license draws for the largest part from open source licenses with their entrenched rights to copy, modify,
+share and commercialise derived projects. Additionally there are two clauses that make it clear that:
 
-* One that makes it clear that our source code and anything derived from it is only intended for use on SpatialOS,
-thereby excluding any competing platforms.
+* Our source code and anything derived from it is only intended for use on SpatialOS, thereby excluding any competing platforms.
+* Improbable should always be identified as author within any derived projects but that, as an author of a derived project, you should feel free to add your own name to the author listing.
 
-* One that makes it clear that Improbable should always be identified as author within any derived projects but that,
-as an author of a derived project, you should feel free to add your own name to this compulsory listing.
 
 ## How does this license affect my work and contributions?
 
