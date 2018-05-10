@@ -2,11 +2,10 @@
 
 # Introduction to the SpatialOS Unity SDK
 
-> You need to set up SpatialOS before you can work on a project using the SpatialOS Unity SDK. To set up SpatialOS, download and set  
-up the `spatial` CLI.  For more information, see the setup guides:
+> You need to set up SpatialOS before you can work on a project using the SpatialOS Unity SDK. To set up SpatialOS, download and set up the `spatial` CLI. For more information, see the setup guides:
 [Windows](get-started/setup/win.md),
 [macOS](get-started/setup/mac.md),
-[Linux](get-started/setup/linux.md)
+[Linux](get-started/setup/linux.md).
 
 You can use the game engine [Unity](https://unity3d.com/) as a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker)
 in a SpatialOS project, to add physics, game logic, and visualization to a SpatialOS simulated world. We provide a
@@ -14,18 +13,26 @@ Unity SDK to make it easier to use Unity as a worker.
 
 > **Compatible Unity versions**: Unity versions **5.6.0** and **2017.3.0** have been tested with SpatialOS. Other versions may work fine, but have not been extensively tested.
 
+**License**
+* See the [license](../LICENSE.md).
+
+**Documentation**
+* The SpatialOS documentation is on the [SpatialOS documentation website](https://docs.improbable.io).
+* The Unity SDK documentation is on [GitHub](start-here-table-of-contents.md). 
+
 ## The relationship between SpatialOS and Unity
 
 When you're using Unity on its own, a Unity scene is the canonical source of truth about the game world. What's in the
 Unity scene is in the game world.
 
-**When you use Unity as a SpatialOS worker**, this isn't true any more: the canonical source of truth is the world of
+When you use Unity as a SpatialOS worker, this isn't true any more: the canonical source of truth is the world of
 the SpatialOS simulation, and the entities in that world. Each Unity worker has a view onto part of that world. It
 represents the entities from SpatialOS as GameObjects in a scene.
 
-A Unity worker can do whatever it likes to its own representation of the world, run whatever logic it likes, etc etc. **But**,
-if the worker doesn't send these changes to SpatialOS in the form of an update to a SpatialOS entity, those changes will only
-ever be local: they can't be seen by any other worker.
+A Unity worker can do whatever it likes to its own representation of the
+world and run whatever logic it likes but if the worker doesn't send these
+changes to SpatialOS in the form of an update to a SpatialOS entity, those
+changes will only ever be local: they can't be seen by any other worker.
 
 Sometimes this is fine. For example, if on a client worker, you are making a purely visual change to a scene, no other
 worker needs to know about it, so it doesn't need to be represented in SpatialOS.
