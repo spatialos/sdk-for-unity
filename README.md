@@ -7,9 +7,9 @@
 * License: This repository is subject to [license](LICENSE.md)
 
 Use the SpatialOS Unity SDK to create games with persistent online worlds.
-Together with the SpatialOS [spatial CLI](https://docs.improbable.io/reference/13.0/shared/spatial-cli/introduction), the SpatialOS Unity SDK
+Together with the SpatialOS [spatial CLI](https://docs.improbable.io/reference/13.0/shared/spatial-cli-introduction), the SpatialOS Unity SDK
 allows you to use [Unity](https://www.unity3d.com) to create games for the [SpatialOS](https://improbable.io/games) platform.
-To help you get started, there are [tutorials](tutorials) to follow and [example games](docs/repositories.md) to
+To help you get started, there are [tutorials](docs/tutorials/learning-resources.md) to follow and [example games](docs/repositories.md) to
 experiment with.  In addition to the [SpatialOS Unity SDK documentation](docs/start-here-table-of-contents.md) in this repository,  you can find out more about
 SpatialOS at [docs.improbable.io](https://docs.improbable.io).
 
