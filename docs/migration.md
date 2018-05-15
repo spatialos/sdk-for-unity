@@ -21,9 +21,9 @@ Follow the steps below for every SpatialOS Unity project you want to upgrade and
 1. From the cloned repository, move the `Assets` and `Improbable` directories into your project’s Unity worker directory (this is usually `<root>/workers/unity`).
 	If you are asked whether to merge or replace the `Assets` folder, select merge, otherwise you will delete the assets that your game depends upon.
 1. Still in the Unity worker directory, edit the `spatialos.UnityClient.worker.json` file to remove `"generated_build_scripts_type":"unity"` completely
-and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".`
+and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".` Be sure to remove the comma after `.json"`.
 1. Edit the `spatialos.UnityWorker.worker.json` file to remove  `"generated_build_scripts_type":"unity"` completely
-and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_script/spatialos.unity.worker.build.json".`
+and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_script/spatialos.unity.worker.build.json".` Be sure to remove the comma after `.json"`.
 1. Delete the `spatialos_worker_packages.json` file.
 1. In the root of your project, edit the `spatialos.json` file in two places so that `"version"` is `“13.0.0”`.
 1. Run `spatial clean` (again).
@@ -70,7 +70,9 @@ For example:
 `~/mySpatialOSgame/workers/unity`
 
 2. In the same directory, edit the `spatialos.UnityClient.worker.json` file to remove `"generated_build_scripts_type":"unity"` completely
-and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".`
+and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".` Make sure you remove the comma after `.json"`.
+
+
 This part of the file should now look like this:
 ```
 "build": {
@@ -79,12 +81,14 @@ This part of the file should now look like this:
 ```
 
 3. In the same directory, edit the `spatialos.UnityWorker.worker.json` file to remove  `"generated_build_scripts_type":"unity"` completely
-and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_script/spatialos.unity.worker.build.json".`
+and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_script/spatialos.unity.worker.build.json".`  Make sure you remove the comma after `.json"`.
+
+
 This part of the file should now look like this:
 ```
 {
   "build": {
-    "tasks_filename": "Improbable/build_script/spatialos.unity.worker.build.json",
+    "tasks_filename": "Improbable/build_script/spatialos.unity.worker.build.json"
   },
   ```
   
@@ -93,6 +97,8 @@ This part of the file should now look like this:
 5. Navigate two directories up to find the `spatialos.json` file.
 Edit the `spatialos.json` file so that the `"version"` is `“13.0.0”` and save the file. Note that there are two
 places to edit the version.
+
+
 The file should now look similar to this:
 ```
 {
