@@ -40,8 +40,7 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
         * `workers/unity/Assets/Plugins/Improbable/Generated.meta`
         * `workers/unity/Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.*`
 
-**Note:** All our starter projects the VCS ignore files are not set as above, so if your project is based on any of these starter projects, you need to edit the VCS ignore files as described in step 10.
-
+**Note:** If you are migrating a starter project that you downloaded before 2018-05-15 the VCS ignore files are not set as above, so you need to edit the VCS ignore files as described above.
 
 ## Detailed guide
 
@@ -134,8 +133,6 @@ Make sure your version control system (VCS) is set to; **stop ignoring** the Uni
     * `workers/unity/Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.*`
 
 You need to do this for every project you migrate.
-
-**Note:** In all our starter projects (including Wizards and Pirates) the version control ignore files are not set as above, so if your project is based on any of these projects, you need to edit the VCS ignore files.
 
 ### 6. Check it worked
 In the root directory of your project, check that the upgrade and migration worked by running:
