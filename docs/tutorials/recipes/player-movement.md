@@ -16,11 +16,11 @@ The main down-side of the server-authoritative model is that it introduces laten
 
 ## Making server-authoritative games for SpatialOS
 
-By design, only one worker at a time can be authoritative over an entity’s component (remember that clients are a type of worker). In this recipe, a player’s Position component will be editable by a single server worker at a time. The rest of the workers might have read access, or might not even know the player exists at all — an entity doesn’t get checked out by a worker unless SpatialOS decides the entity is of [interest (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#interest) to that particular worker.
+By design, only one worker at a time can be authoritative over an entity’s component (remember that clients are a type of worker). In this recipe, a player’s Position component will be editable by a single server worker at a time. The rest of the workers might have read access, or might not even know the player exists at all — an entity doesn’t get checked out by a worker unless SpatialOS decides the entity is of [interest (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#interest) to that particular worker.
 
 Each client worker will be sharing their player’s input through a client-authoritative component. In this recipe, the component is named PlayerInput, but you can call it something else if you like, nor is it mandatory to aggregate all the input into the same component. The server worker authoritative over their Player will read the input stored in the component to take the appropriate actions for the player — in this case, moving them.
 
-When building an entity, e.g. in the entity templates in `Gamelogic/EntityTemplates/EntityTemplateFactory.cs`, specify `PhysicsOnly` for those components that should only be editable by server-side workers. Otherwise, you probably want to use `SpecificClientOnly(clientId)` to restrict editing to the client that “owns” the entity. Read the [”Access control lists” (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl) guide for more information.
+When building an entity, e.g. in the entity templates in `Gamelogic/EntityTemplates/EntityTemplateFactory.cs`, specify `PhysicsOnly` for those components that should only be editable by server-side workers. Otherwise, you probably want to use `SpecificClientOnly(clientId)` to restrict editing to the client that “owns” the entity. Read the [”Access control lists” (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl) guide for more information.
 
 ```c#
 public static Entity CreatePlayerCreatorTemplate()
@@ -103,7 +103,7 @@ public static Entity CreatePlayerTemplate(string clientId)
 
 If you [build and run](../../develop/build.md#quick-reference), you should see an instance of the Player prefab, `Player(Clone)`, in Unity’s Hierarchy panel. This GameObject is linked to your Player entity, which has been created in response to your connection, as described in the [Client connection lifecycle](../../tutorials/recipes/client-lifecycle.md) recipe.
 
-If you inspect your Player entity using the [SpatialOS Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#inspector), you can see that its Position component has a value of `(0,10,0)` (which is the entity’s default position, as described in its entity template), whereas if you inspect its associated GameObject (`Player(Clone)`) in Unity’s Inspector, you can see that its Transform has a value of `(-9999,-9999,-9999)` (which is the default position for Spatial-instanced GameObjects).
+If you inspect your Player entity using the [SpatialOS Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#inspector), you can see that its Position component has a value of `(0,10,0)` (which is the entity’s default position, as described in its entity template), whereas if you inspect its associated GameObject (`Player(Clone)`) in Unity’s Inspector, you can see that its Transform has a value of `(-9999,-9999,-9999)` (which is the default position for Spatial-instanced GameObjects).
 
 ![Position mismatch](../../assets/recipes/unity-player-movement/1.4-mismatching-positions-2.png)
 
@@ -333,13 +333,13 @@ If you [build and run](../../develop/build.md#quick-reference), you should be ab
 
 ![Moving the player](../../assets/recipes/unity-player-movement/3.2-moving-the-player.gif)
 
-Follow the [Deploy a project (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/deploy/deploy-cloud) guide to deploy your game to the cloud – great for testing your game with friends thanks to our [Launcher (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/operate/launcher)! You can also launch another local client using `spatial local worker launch UnityClient default`.
+Follow the [Deploy a project (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/deploy/deploy-cloud) guide to deploy your game to the cloud – great for testing your game with friends thanks to our [Launcher (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/operate/launcher)! You can also launch another local client using `spatial local worker launch UnityClient default`.
 
 > During testing, you may experience an interesting case where the objects on top
 of the platform disappear. This will happen when your player falls off from the platform towards some direction.
 
 > When the player gets too far away from the platform (`x` and `z` wise), your client stops checking out the entities
-on top of it, because they no longer fall within the [interest (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#interest) radius of
+on top of it, because they no longer fall within the [interest (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#interest) radius of
 your player.
 
 ### 3.3 Be careful with player input
@@ -476,10 +476,10 @@ You should now be able to add server-authoritative movement to players in respon
 
 - If you want to turn this recipe into a game, e.g. “CubeSumo”, here’s a few ideas:
 
-    - **Jumping**. You can implement it using [events (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#event), or by syncing the state of a key as a `bool`.
+    - **Jumping**. You can implement it using [events (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#event), or by syncing the state of a key as a `bool`.
     - **Player respawning**. Players respawn when they fall off the platform.
     - **Lives**. Players have a limited amount of lives, which is displayed somehow, and decreased every time a player needs to be respawned.
-    - **Usernames**. An [Input Field](https://docs.unity3d.com/Manual/script-InputField.html) and [Button](https://docs.unity3d.com/ScriptReference/UI.Button.html) to set your own username. You can implement the request using [commands (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#command).
+    - **Usernames**. An [Input Field](https://docs.unity3d.com/Manual/script-InputField.html) and [Button](https://docs.unity3d.com/ScriptReference/UI.Button.html) to set your own username. You can implement the request using [commands (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command).
 
 ## Relevant recipes
 

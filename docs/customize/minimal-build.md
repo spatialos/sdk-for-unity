@@ -29,10 +29,10 @@ This system does have a few downsides:
 
 To set up Unity to use the new build system:
 
-1. In the `spatialos.*.worker.json` files for both the UnityClient and UnityWorker, change the value of [`tasks_filename` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/worker-build#using-custom-build-scripts):
+1. In the `spatialos.*.worker.json` files for both the UnityClient and UnityWorker, change the value of [`tasks_filename` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/worker-build#using-custom-build-scripts):
   * For `spatialos.UnityClient.worker.json`, change `spatialos.unity.client.build.json` to `Improbable/build_script/spatialos.unity.client.build.experimental.json`
   * For `spatialos.UnityWorker.worker.json`, change `spatialos.unity.worker.build.experimental.json` to `Improbable/build_script/spatialos.unity.worker.build.experimental.json`
-1. In the root folder of your project, run [`spatial codegen` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-codegen#spatial-worker-codegen).
+1. In the root folder of your project, run [`spatial codegen` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-codegen#spatial-worker-codegen).
 1. Open your project in Unity.
 1. Open the UnityClient scene, and select the "Bootstrap" or "GameEntry" `GameObject` in the hierarchy.
 1. Remove the `DefaultTemplateProvider` component if it is there, then add the `BasicTemplateProvider` component.
@@ -49,7 +49,7 @@ There are two ways to build your workers:
   * The console will print a log after the build has completed.
 
 * From a command prompt in your project folder
-  * With Unity closed, run [`spatial worker build --target=local` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-build#spatial-worker-build)
+  * With Unity closed, run [`spatial worker build --target=local` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-build#spatial-worker-build)
 
 ## Configuring your build
 
@@ -57,7 +57,7 @@ You can use the build configuration asset created in [Getting started](#getting-
 
 ### Local and cloud environment
 
-Use the local and cloud environments to have different build settings for [local (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#local-deployment) and [cloud (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#cloud-deployment) deployments. Both environments will produce the same results if they have the same settings, with the exception of the compression on the final zip file: to save build time, the local environment will not enable compression.
+Use the local and cloud environments to have different build settings for [local (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#local-deployment) and [cloud (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#cloud-deployment) deployments. Both environments will produce the same results if they have the same settings, with the exception of the compression on the final zip file: to save build time, the local environment will not enable compression.
 
 > 'local' and 'cloud' environments were previously called 'development' and 'deployment'.
 
@@ -142,4 +142,4 @@ You can revert to the old system using the following steps:
 1. Delete the build configuration asset that was created in step 7 of [Getting Started](#getting-started).
 1. Revert the changes to the UnityClient and UnityWorker scenes.
 1. Revert the changes to the `spatialos.*.worker.json` files.
-1. Run [`spatial codegen` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-codegen#spatial-worker-codegen) in your project's root folder.
+1. Run [`spatial codegen` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-codegen#spatial-worker-codegen) in your project's root folder.

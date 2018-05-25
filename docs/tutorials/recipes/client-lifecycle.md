@@ -23,7 +23,7 @@ as the starting point for this recipe.
 
 Workers create entities using the `CreateEntity()` command. But in games, you don't want to give clients the power to
 send such commands directly, to limit what a malicious client would be able to do (you could also enforce this using
-[worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/permissions), which aren't covered in this recipe).
+[worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/permissions), which aren't covered in this recipe).
 
 This means clients need to communicate with a server-side worker in order to create a player. So instead of creating an
 entity themselves, you can use a pattern where clients send a component command to a `PlayerCreator` entity, requesting

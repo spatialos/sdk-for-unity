@@ -1,15 +1,15 @@
 # Interacting with entity components
 
-This page details the ways that a Unity [worker (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker) can find out about and
-interact with the [components (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component) on
-SpatialOS [entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity).
+This page details the ways that a Unity [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker) can find out about and
+interact with the [components (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component) on
+SpatialOS [entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity).
 
-The code used to do this is generated from [schema (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schema)
+The code used to do this is generated from [schema (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schema)
 when you run `spatial worker codegen`. When you change your schema, you need to run codegen to get the
 up-to-date code to use.
 
 For information about creating components, see the
-[schema documentation (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/schema/introduction).
+[schema documentation (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/schema/introduction).
 
 ## Prerequisites
 
@@ -23,6 +23,9 @@ Component readers and writers will be available when the `OnEnable` event functi
 
 > For more information, have a look at
 [MonoBehaviour lifecycle](../reference/monobehaviour-lifecycle.md).
+
+### Example of MonoBehaviours component readers and writers
+In order to read from or write to a component, you need to include a component reader or writer - classes created by [code generation  (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#code-generation).
 
 All the examples on this page use a component reader (an `IComponentReader`) or writer 
 (an `IComponentWriter`), imported like this:
@@ -41,8 +44,8 @@ The `Reader` and `Writer` interfaces are nested inside the classes of their corr
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component reader *or* writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) for the relevant component
-* the worker must have [read access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
+* the MonoBehaviour needs a [component reader *or* writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) for the relevant component
+* the worker must have [read access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) on the component
 
 To get the current value of a property, use `exampleComponentReader.Data.ExampleProperty`. `exampleComponentReader.Data` contains the full
 persistent properties of the component.
@@ -51,8 +54,8 @@ persistent properties of the component.
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) for the relevant component
-* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
+* the MonoBehaviour needs a [component writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) for the relevant component
+* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) on the component
 
 To set the value of a property, use `exampleComponentWriter.Send()`, which takes an `Update` object.
 
@@ -106,7 +109,7 @@ See [below](#triggering-an-event).
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component reader *or* writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) for the relevant component
+* the MonoBehaviour needs a [component reader *or* writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) for the relevant component
 * the worker must have [read access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
 
 Register callbacks on change of a specific property, or for *any* property change on the component, using
@@ -153,8 +156,8 @@ void OnExamplePropertyUpdated(int examplePropertyValue)
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) for the relevant component
-* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
+* the MonoBehaviour needs a [component writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) for the relevant component
+* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) on the component
 
 To trigger an event, use `exampleComponentWriter.Send()`, which takes an `Update` object.
 
@@ -189,8 +192,8 @@ See [above](#set-the-value-of-a-property).
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component reader *or* writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) for the relevant component
-* the worker must have [read access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
+* the MonoBehaviour needs a [component reader *or* writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) for the relevant component
+* the worker must have [read access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) on the component
 
 Register callbacks for events using `exampleComponentReader.ExampleEventTriggered`.
 
@@ -227,13 +230,13 @@ When you send a command, register a callback to receive a response, which includ
 * a response object of the return type
 
 It is guaranteed that SpatialOS will only report a 
-command's success if it actually succeeded, but [no other guarantees are made (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/commands#caveats). 
+command's success if it actually succeeded, but [no other guarantees are made (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/commands#caveats). 
 
 Prerequisites:
 
-* the MonoBehaviour needs a [component writer (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers) - this **doesn't** need to be on the component the command is on 
+* the MonoBehaviour needs a [component writer](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers) - this **doesn't** need to be on the component the command is on 
 (it's just used to avoid commands being sent repeatedly)
-* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) on the component
+* the worker must have [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) on the component
 
 To send a command, use `SpatialOS.SendCommand()` (with `using Improbable.Unity.Core`). For example:
 
@@ -286,7 +289,7 @@ For a full example, see the [command recipe](../tutorials/recipes/command.md).
 ## Responding to a command request
 
 To decide which worker should respond to a command, look at which workers have access to the component containing the command.
-Whichever worker has [*write access* (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) to
+Whichever worker has [*write access* (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) to
 the component will be sent the command request, and should respond. For example, if the UnityWorker has write
 access to a player's Health component, the UnityWorker should implement the command.
 

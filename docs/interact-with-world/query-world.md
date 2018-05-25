@@ -1,10 +1,10 @@
 # Querying the world
 
-You can search the [world (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#spatialos-world) for [entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity),
-using [entity queries (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#queries) that use a rich query language.
+You can search the [world (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#spatialos-world) for [entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity),
+using [entity queries (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#queries) that use a rich query language.
 
 This is useful if you want to get information about entities, including entities that your worker doesn't have
-[checked out (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#checking-out).
+[checked out (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#checking-out).
 
 > You should keep entity queries as limited as possible. All queries hit the network and
 cause a runtime lookup, which is expensive even in the best cases. This means you should:
@@ -15,13 +15,13 @@ cause a runtime lookup, which is expensive even in the best cases. This means yo
 of using a query, for example using Unity's
 [GameObject Find methods](https://docs.unity3d.com/ScriptReference/GameObject.html)
 
-A query can return [entity IDs (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entityid), so you can query for entities that you want to run a
-[command (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#command) on.
+A query can return [entity IDs (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entityid), so you can query for entities that you want to run a
+[command (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command) on.
 
 ## Prerequisites
 
 In order to send an entity query, a worker must have **permission** to do so. For more information, see the
-[Worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/permissions) page.
+[Worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/permissions) page.
 
 ## Building a query
 

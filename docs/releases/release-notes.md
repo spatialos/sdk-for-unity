@@ -1,10 +1,14 @@
 # Release notes
 
-## SpatialOS Unity SDK 1.0.0
+## SpatialOS Unity SDK 1.0.1
+_Released: 2018-05-24_
 
-[comment]: # (TODO: *Released on 2018-04-30*)
 
-### Known issues
+### Fixes
 
-#### General
-* For cloud deployments, if the assembly used in the deployment was built on Windows, you won’t be able to use share links to launch clients on Mac. This is caused by a problem in the zipping library that share links depend on.
+* Deregistering a command response twice will no longer throw an exception.
+* When a user exits a game while trying to connect, the connection failure callback reason now says "An application quit signal was received." Previously the reason was blank.
+* The worker now sends component updates correctly including when its authority loss is imminent.
+
+
+

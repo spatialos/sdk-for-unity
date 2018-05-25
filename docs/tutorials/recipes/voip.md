@@ -19,10 +19,10 @@ to achieve stereo sound).
 
 ### Designing this
 
-It might be intuitive to want to store the audio in a [property (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#property): but this actually
+It might be intuitive to want to store the audio in a [property (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#property): but this actually
 means synchronising a large amount of data.
 
-A better approach is to send the audio as part of an [event (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#event). This means that:
+A better approach is to send the audio as part of an [event (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#event). This means that:
 
 * the audio data is only sent once
 * the audio data doesn't need to be stored

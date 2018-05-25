@@ -249,7 +249,7 @@ In this lesson you:
 
 * thought about which code should run on which worker
 * learned about the `[Require]` annotation
-* learned about [component `Writer`s (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers)
+* learned about [component `Writer`s (SpatialOS documentation)](../../interact-with-world/interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers)
 * used a `Writer` to send an update to a component property
 * re-used existing functionality to move the pirate ships around
 

@@ -28,7 +28,7 @@ Through adding features to the game you'll learn:
 ## Why is this useful
 
 Sometimes you might want to take parts of the game logic out of the core game process.
-Some of the reasons for doing this are outlined in [Designing workers](https://docs.improbable.io/reference/12.2/shared/design/design-workers).
+Some of the reasons for doing this are outlined in [Designing workers](https://docs.improbable.io/reference/13.0/shared/design/design-workers).
 
 Understanding how to use the C++ SDK through simple examples is the first step on the
 way to building more complex logic workers. For example, if you want to integrate a

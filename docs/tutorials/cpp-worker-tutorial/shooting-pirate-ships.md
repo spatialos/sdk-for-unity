@@ -1,6 +1,6 @@
 # Lesson 4 - Trigger a component event
 
-In this lesson you will trigger a [component event (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#event)
+In this lesson you will trigger a [component event (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#event)
 based on a behaviour defined by your worker.
 This event will cause pirate ships to shoot whenever there is another ship in
 range of their cannons.
@@ -14,7 +14,7 @@ You will learn:
 You will implement this logic in the same worker which is moving the pirate
 ships. While there's nothing stopping you from creating another one and
 separating this behaviour, too, remeber the principles for [designing
-workers (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/design-workers#managed-workers). If you take
+workers (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/design-workers#managed-workers). If you take
 moving pirate ships and shooting pirate ships as two separate sub-systems, some
 of the described downsides will apply. The two sub-systems would need to
 communicate with each other very frequently and pretty much the same components
@@ -29,7 +29,7 @@ pirate ships around. In this lesson, you're going to add something new to
 
 Components are defined in a project's **schema**. SpatialOS uses this schema to
 generate code which workers use to read and write to components. It's written
-in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schemalang), and
+in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schemalang), and
 it's located in the `schema` directory of the project.
 
 1. From the project root directory, navigate to
@@ -147,7 +147,7 @@ cannons from the `PlayerShip` prefab to `PirateShip` as shown below:
 Open `CannonFirer.cs` and add handlers for the `FireLeft` and `FireRight`
 component events. The snippet below shows the complete script. This is an
 example of handling a component event. Events are very similar to [component
-properties (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#property).
+properties (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#property).
 
 > In fact, everything you can do with an event can also be done with a
 property. What properties add on top of events is persistence - you can read
@@ -615,4 +615,4 @@ Here are some extensions you should be able to tackle:
 As your worker becomes more complex, being able to debug it becomes invaluable.
 It's nice to know how to
 [attach a debugger](https://github.com/spatialos/CppBlankProject#attaching-a-debugger)
-and where to find [logs (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/operate/logs).
+and where to find [logs (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/operate/logs).

@@ -1,7 +1,7 @@
 # Getting information about local entities
 
-The `SpatialOS` utility class exposes the following methods for retrieving [entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity)
-[checked out (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#checking-out) by a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker):
+The `SpatialOS` utility class exposes the following methods for retrieving [entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity)
+[checked out (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#checking-out) by a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker):
 
 * `public static Worker.Entity GetLocalEntity(EntityId entityId);`
 

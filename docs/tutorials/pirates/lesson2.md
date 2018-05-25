@@ -56,10 +56,10 @@ public static Entity CreatePlayerShipTemplate(string clientWorkerId, Vector3 ini
 Take a look at the lines that begin with `.Add`. These lines add components to the specified entity template for the
 player's ship:
 
-* [**Position** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#position): defines the position of an entity in the
+* [**Position** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#position): defines the position of an entity in the
   world. Every entity needs a `Position` component. There is a special `AddPositionComponent` method because
   **Position** is a required component for all entities.
-* [**Metadata** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#metadata): defines the entity type of an entity which
+* [**Metadata** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#metadata): defines the entity type of an entity which
   is used internally by the Unity SDK to map entities to Unity prefabs.
 * **ClientConnection**: used to maintain a connection with clients. This is only needed by entities associated with a
   player client, so you don't need this component for the pirate ships.
@@ -67,13 +67,13 @@ player's ship:
 * **ClientAuthorityCheck**: another component only needed by entities associated with a player client. You don't need
   this component for the pirate ships either.
 
-Every entity also has an [**ACL** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl) (access control list)
+Every entity also has an [**ACL** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl) (access control list)
 component, which determines which workers can read from and write to its components. You'll learn about and edit
 **ACLs** in later lessons. For now, it's enough to know that
 `CommonRequirementSets.SpecificClientOnly(clientWorkerId)` makes sure that only the player client has write access to
 the player ship components.
 
-We set the [**Persistence** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#persistence) component of this entity to
+We set the [**Persistence** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#persistence) component of this entity to
 `false`, because we want it to have the same lifecycle as the player that controls it.
 
 ### 1.2. Create a Pirate entity template
@@ -300,9 +300,9 @@ When you're done, stop the game running:
 
 In this lesson you:
 
-* learned what an [entity template (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity-template) is
+* learned what an [entity template (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity-template) is
 * created a new entity template for a pirate ship, and added components to it
-* learned what a [snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#snapshot) is
+* learned what a [snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#snapshot) is
 * wrote code to edit what's in the default snapshot
 * changed the world's default snapshot to contain pirate ships
 

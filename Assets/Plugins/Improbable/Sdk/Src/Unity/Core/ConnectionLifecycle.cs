@@ -149,8 +149,8 @@ namespace Improbable.Unity.Core
             var connect = WorkerConnection.ConnectAsync(parameters, Deployment, AttachConnection);
             yield return connect;
 
-            SpatialOS.ConnectionWasSuccesful = Connection.IsConnected;
-            if (SpatialOS.ConnectionWasSuccesful)
+            SpatialOS.ConnectionWasSuccessful = Connection.IsConnected;
+            if (SpatialOS.ConnectionWasSuccessful)
             {
                 logger = new LogSender(() => SpatialOS.IsConnected, Connection.SendLogMessage, SpatialOS.Configuration, SpatialOS.LogFilter);
                 SetupComponents();
@@ -200,6 +200,7 @@ namespace Improbable.Unity.Core
         // before calling the first OnDestroy).
         private void OnApplicationQuit()
         {
+            SpatialOS.SignalApplicationQuit();
             Dispose();
         }
 

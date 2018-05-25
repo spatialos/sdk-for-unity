@@ -54,7 +54,7 @@ the secret key.
 
 ### Pass a command-line argument
 
-The command-line arguments used to launch each worker are defined in the [worker launch configuration files (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/launch-configuration#worker-launch-configuration). To add a command line argument:
+The command-line arguments used to launch each worker are defined in the [worker launch configuration files (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/launch-configuration#worker-launch-configuration). To add a command line argument:
 
 0. Open `workers/unity/spatialos.UnityWorker.worker.json`. The command-line arguments for 
     each target are defined in the arguments object.

@@ -217,8 +217,8 @@ The menu `Improbable -> Prefabs -> Export All EntityPrefabs` runs the entity exp
 
 This method puts files into the `<project root>/build/assembly/` directory; when you run `spatial cloud upload`, the
 contents of this directory are uploaded so they can be used by a
-[cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#cloud-deployment). For more information
-on deploying, see [Deploying to the cloud (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/deploy/deploy-cloud).
+[cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#cloud-deployment). For more information
+on deploying, see [Deploying to the cloud (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/deploy/deploy-cloud).
 
 ### Customizing the exporting of prefabs
 
@@ -277,7 +277,7 @@ If you use the `Local` asset database, workers will load asset bundles from a di
 on disk. Assets are bundled into the worker executable, which means workers don't need to download prefab information
 at entity spawn time.
 
-Set this in the [launch section of the worker configuration file (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/launch-configuration)
+Set this in the [launch section of the worker configuration file (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/launch-configuration)
 (eg `spatialos.UnityClient.worker.json`) in the `arguments` section, for example:
 
 ```
@@ -298,7 +298,7 @@ However, it might take longer to load initially, depending on internet speed, an
 This is the default asset database, but we recommend switching to the local asset database.
 
 To explicitly use the streaming asset database, set this in the
-[launch section of the worker configuration file (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/launch-configuration)
+[launch section of the worker configuration file (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/launch-configuration)
 (eg `spatialos.UnityClient.worker.json`) in the `arguments` section, for example:
 
 ```

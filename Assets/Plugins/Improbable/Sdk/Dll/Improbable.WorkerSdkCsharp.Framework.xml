@@ -251,9 +251,6 @@
              <summary>
              De-register a user-defined callback for responding to an incoming command request.
              </summary>
-             <exception cref="T:System.InvalidOperationException">
-             If no response is registered.
-             </exception>
             </member>
         <member name="M:Improbable.Entity.Component.CommandResponderWrapper`3.InvokeSendResponse(Improbable.Entity.Component.ResponseHandle{`0,`1,`2})">
              <summary>

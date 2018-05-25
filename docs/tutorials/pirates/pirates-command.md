@@ -13,7 +13,7 @@ In this lesson you'll:
 
 PlayerShip entities need the concept of a 'score'. This information is persistent, so it should exist as a new component.
 
-You also need a way to tell a ship that it has scored a kill. You can do this using [commands (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#command)
+You also need a way to tell a ship that it has scored a kill. You can do this using [commands (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command)
 so a sinking ship can command the ship which fired the fatal cannonball to award itself points. You'll
 then create a MonoBehaviour to implement what the firing ship does when it is told to award itself points,
 which will include incrementing its points counter and updating the score on the client's UI.
@@ -65,7 +65,7 @@ Add the `Score` component to the `Entity` object with the same syntax you used e
 .AddComponent(new Score.Data(0), CommonRequirementSets.PhysicsOnly)
 ```
 
-This also updates the [access control list (ACL) (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl) for this new component.
+This also updates the [access control list (ACL) (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl) for this new component.
 Remember that the ACL controls which workers can write to the component's properties? It also controls which
 workers can provide implementations for the component's commands.
 
@@ -365,24 +365,26 @@ namespace Assets.Gamelogic.Pirates.Behaviours
         private Canvas scoreCanvasUI;
         private Text totalPointsGUI;
 
-        private void Awake()
-        {
-            if (scoreCanvasUI != null) {
-                totalPointsGUI = scoreCanvasUI.GetComponentInChildren<Text>();
-                scoreCanvasUI.enabled = false;
-                updateGUI(0);
-            }
-        }
 
         private void OnEnable()
         {
-            // Register callback for when components change
+            if (scoreCanvasUI == null)
+            {
+                // If scoreCanvasUI is null, set it to the Canvas GameObject.
+                scoreCanvasUI = GameObject.Find("ScoreCanvas").GetComponent<Canvas>();
+            }
+            // Accesses the child Text component in the Canvas GameObject.
+            totalPointsGUI = scoreCanvasUI.GetComponentInChildren<Text>();
+            // Prevents the Canvas from displaying when the script is first enabled.
+            scoreCanvasUI.enabled = false;
+            updateGUI(0);
+            // Register callback for when components change.
             ScoreReader.NumberOfPointsUpdated.Add(OnNumberOfPointsUpdated);
         }
 
         private void OnDisable()
         {
-            // Deregister callback for when components change
+            // Deregister callback for when components change.
             ScoreReader.NumberOfPointsUpdated.Remove(OnNumberOfPointsUpdated);
         }
 

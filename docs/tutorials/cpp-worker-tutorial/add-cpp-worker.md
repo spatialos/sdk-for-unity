@@ -155,4 +155,4 @@ this**. If the command succeeds, you are ready to continue with the
 > ```
 > spatial worker build PirateShipMovement -t=<platform>
 > ```
-> to build your workers. See [`spatial worker build` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-build) for more details.
+> to build your workers. See [`spatial worker build` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-build) for more details.
