@@ -21,7 +21,7 @@ or use the ideas and code snippets in a project of your own.
 
 The most important decision is which worker should perform the spawning of the cubes.
 
-Creating entities requires appropriate [worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/permissions)
+Creating entities requires appropriate [worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/permissions)
 (usually defined in `default_launch.json`), which UnityWorkers are granted by default. To
 achieve your goal you *could* grant UnityClients permission to create entities, but
 if clients are malicious they could use this to create entities in an uncontrollable
@@ -156,7 +156,7 @@ In other scenarios, where communication between entities is desired, using a **c
 instead of an **event** might be a better decision. 
 
 > For a more thorough discussion, see
-[Component best practices (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/component-best-practices).
+[Component best practices (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/component-best-practices).
 
 You'll now add a server-side script to the `Player` which will attach a callback
 to updates of the `CubeSpawner` component, which will use the entity creation API
@@ -252,7 +252,7 @@ Press `Run` in the SpatialOS window under `Run SpatialOS locally` to start the g
 `UnityClient` scene in your Unity editor to connect as normally. Once connected, clicking
 the left mouse button should spawn a cube on top of the one which is there on start-up.
 You should also be able to see the game object for the newly created cube entity
-appear in the `Hierarchy` window in Unity as well as in the [Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#inspector) at
+appear in the `Hierarchy` window in Unity as well as in the [Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#inspector) at
 [http://localhost:21000/inspector](http://localhost:21000/inspector).
 
 ![Cubes spawn and game objects appear in hierarchy](../../assets/recipes/unity-runtime-entity-creation/cubes.gif)
@@ -278,7 +278,7 @@ Combined with the `Rigidbody` behaviour this results in an interesting effect:
 To take things further, you could create a `PositionSender` whose purpose is to update the `Position` component of
 `Cube` entities in response to changes in position on the client. Building on this leads to topics such as [Client-Side
 Prediction and Server reconciliation](http://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html)
-and [Access control lists (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/understanding-access).
+and [Access control lists (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/understanding-access).
 
 # Conclusion
 

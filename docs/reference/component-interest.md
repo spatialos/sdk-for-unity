@@ -1,7 +1,7 @@
 # Which components your Unity worker will check out
 
 The Unity SDK manages component delivery to enhance the default behaviour.
-For more information on the default behaviour, see [Component delivery (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/bridge-config#component-delivery).
+For more information on the default behaviour, see [Component delivery (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#component-delivery).
 
 Your Unity SDK workers will automatically be interested in only the components that you have referenced in your scripts and prefabs.
 See [below](#automatic-component-interest) for how this works.
@@ -48,12 +48,12 @@ public class InventoryVisualizer : MonoBehaviour
 ```
 
 Because of the `[Require]` attribute, the Unity SDK will calculate interest in all `Inventory`
-components. SpatialOS will send unwanted data, even if you specify that you're not interested in your [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/bridge-config#component-delivery).
+components. SpatialOS will send unwanted data, even if you specify that you're not interested in your [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#component-delivery).
 
 To implement the desired player selection behaviour:
 
 1. Ensure that your `Inventory` component has `checkout_initially` set to `false` in your
-[bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/bridge-config#components-to-check-out-initially).
+[bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#components-to-check-out-initially).
 
 2. Globally disable interest in the `Inventory` component so that the Unity SDK won't calculate interest,
 even though it's marked with `[Require]`.

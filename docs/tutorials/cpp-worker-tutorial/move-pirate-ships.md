@@ -16,7 +16,7 @@ could be any program - in C++ or any other of the supported languages.
 You will learn:
 
 - how to update component properties
-- how to work with a [`View` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/cppsdk/using#using-the-view)
+- how to work with a [`View` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/cppsdk/using#using-the-view)
 
 ## 1. Update ship controls
 
@@ -122,9 +122,9 @@ dispatcher.Process(connection.GetOpList(kGetOpListTimeoutInMilliseconds));
 ```
 
 is no longer part of the main loop. You should remove the
-[dispatcher (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/cppsdk/using#dispatcher-callbacks) declaration:
+[dispatcher (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/cppsdk/using#dispatcher-callbacks) declaration:
 `worker::Dispatcher dispatcher;` and replace all usages of `dispatcher` with
-`view` because a [View (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/cppsdk/using#using-the-view) is just a
+`view` because a [View (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/cppsdk/using#using-the-view) is just a
 specialised Dispatcher and it will support all the callbacks you had before.
 
 A couple of things to note about the code above:
@@ -281,4 +281,4 @@ or any other of the supported languages.
 
 In the [next lesson](../../tutorials/cpp-worker-tutorial/shooting-pirate-ships.md)
 you will make the pirate ships shoot when there is another ship in
-range. You will learn about component [events (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#event) and how to add a library to your worker.
+range. You will learn about component [events (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#event) and how to add a library to your worker.

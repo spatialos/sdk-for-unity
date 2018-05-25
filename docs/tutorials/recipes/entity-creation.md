@@ -2,7 +2,7 @@
 
 This recipe shows how to add an entity to a SpatialOS simulation with the Unity SDK.
 
-The entity is created in a [snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/operate/snapshots), meaning it will exist when the
+The entity is created in a [snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/operate/snapshots), meaning it will exist when the
 simulation starts. For an example of creating an entity at runtime, see the
 [Unity client lifecycle recipe](../../tutorials/recipes/client-lifecycle.md#4-respond-to-the-player-creation-command).
 
@@ -65,7 +65,7 @@ templates. This entity template describes:
  * What components the entity has
  * How read and write access for those components are distributed between workers. More
  information is available in the
- [glossary (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity-template).
+ [glossary (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity-template).
 
 A good pattern is to define methods that create entity templates in a script like `EntityTemplateFactory.cs`. 
 We normally locate it in `Assets/Gamelogic/EntityTemplates`, and it looks like this:

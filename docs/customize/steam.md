@@ -110,7 +110,7 @@ At this stage, you can start a game client from Steam. However, the current impl
 
 * UnityClients can only be started from Steam and nowhere else.
 * UnityWorkers won't connect.
-* The [Launcher (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#launcher) will no longer work.
+* The [Launcher (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#launcher) will no longer work.
 
 To fix these problems, you can wrap the Steam logic in a check for a command-line argument: `steamClient`.
 This argument will be present when you launch a client from Steam. But it won't be there when you launch a client
@@ -158,8 +158,8 @@ To do this:
     * Executable: Your client executable, for example `UnityClient@Windows.exe` or `UnityClient@Mac.app`.
     * Arguments: `+appName <your SpatialOS project name> +assetDatabaseStrategy Streaming +steamClient true`
         * `+appName` needs to be set to your
-        [SpatialOS project name (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#project-name), as specified in
-        your [`spatialos.json` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/reference/file-formats/spatialos-json).
+        [SpatialOS project name (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#project-name), as specified in
+        your [`spatialos.json` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/reference/file-formats/spatialos-json).
         * `+assetDatabaseStrategy Streaming` specifies that entity prefabs loaded as part of your project assemblies
         will be downloaded to the game client at runtime.
         * `+steamClient true` means that clients launched from Steam will use Steam authentication, using the
@@ -181,7 +181,7 @@ To do this for all the deployments in your project:
 
 Alternatively, you can:
 
-* Add the tag when [launching a cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/deploy/deploy-cloud) (replacing `steam_deployment` with your own string):
+* Add the tag when [launching a cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/deploy/deploy-cloud) (replacing `steam_deployment` with your own string):
 
     ```
     spatial cloud launch [...] --tags=steam_deployment

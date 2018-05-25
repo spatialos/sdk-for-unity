@@ -14,10 +14,10 @@ In this lesson you'll:
 In [lesson 4](../../tutorials/pirates/lesson4.md#2-extend-the-shipcontrols-component-to-fire-cannonballs), you extended
 an existing component: `ShipControls`. But now, you want to add a brand new component: one that stores the health of a ship.
 
-> As a reminder: [Components (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component) are defined in your
-project’s [schema (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schema), written in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schemalang),
+> As a reminder: [Components (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component) are defined in your
+project’s [schema (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schema), written in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schemalang),
 in the `/schema` directory of the project. SpatialOS uses the schema to
-[generate code (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#code-generation) which workers use to read and write to components.
+[generate code (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#code-generation) which workers use to read and write to components.
 
 ### 1.1. Define the new component
 

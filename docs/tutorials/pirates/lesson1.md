@@ -93,7 +93,7 @@ Explore the world, and have some fun!
 
 ## 3. Open the Inspector
 
-The [Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#inspector) is a web-based tool that you use to explore the
+The [Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#inspector) is a web-based tool that you use to explore the
 internal state of a SpatialOS world. You’ll use it right now to find out about the main SpatialOS concepts.
 
 Open the Inspector at [`http://localhost:21000/inspector`](http://localhost:21000/inspector).
@@ -103,9 +103,9 @@ Open the Inspector at [`http://localhost:21000/inspector`](http://localhost:2100
 #### Entities
 
 **Entities** are the basic building block of a SpatialOS world.
-Every _thing_ in your game world is an [entity (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity).
+Every _thing_ in your game world is an [entity (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity).
 
-Entities are made of [components (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component), which describe an entity's
+Entities are made of [components (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component), which describe an entity's
 properties (like position, health, or waypoints). Later in this lesson you'll see the values of the components changing
 in real time; and in future lessons, you'll add new components to your ship entity.
 
@@ -200,8 +200,8 @@ workarounds.
 ## Lesson summary
 
 In this lesson you've set up the SpatialOS SDK on your machine, and run the Pirates game for the first time.
-You've also learned about some fundamental SpatialOS concepts: [entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity),
-[components (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component) and [workers (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker).
+You've also learned about some fundamental SpatialOS concepts: [entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity),
+[components (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component) and [workers (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker).
 
 ### What's next?
 

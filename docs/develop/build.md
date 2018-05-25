@@ -3,7 +3,7 @@
 > A new build system (currently in **beta**) was introduced in SpatialOS 12.2. This page is about the system that existed before that. To try out the new system, see [Using the new build system](../customize/minimal-build.md).
 
 This page is about building in the Unity Editor. If you want to build from the command line, see
-[Building from the command line (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/build).
+[Building from the command line (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/build).
 
 ## Quick reference
 
@@ -46,17 +46,17 @@ the [Build configuration](../customize/configure-build.md#build-configuration) s
 ## If you’ve changed the schema
 
 **Any time** you change the [schema]
-(https://docs.improbable.io/reference/12.2/shared/glossary#schema) (for example, add or
-change a [component (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component)),
+(https://docs.improbable.io/reference/13.0/shared/glossary#schema) (for example, add or
+change a [component (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component)),
 you need to regenerate the [generated
-code (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#code-generation), and fix
+code (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#code-generation), and fix
 code references.
 
 > Don't forget to keep your schema
-[backwards-compatible (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/schema/evolution).
+[backwards-compatible (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/schema/evolution).
 
 1. In the Unity Editor, open the [SpatialOS
-window (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#unity-spatialos-window) (`Window
+window (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#unity-spatialos-window) (`Window
 > SpatialOS`).
 1. To generate the code for Unity to use, go to the `Build` tab, and under `Generate from schema`, click `Build`.
 1. If there are any code references that are broken by the schema changes, fix
@@ -86,7 +86,7 @@ To build prefabs, open the [SpatialOS window](../reference/spatialos-window.md) 
 
 ### Build from the command line
 
-The SpatialOS window isn't the only way to build your project - you can also build using the [`spatial` command-line tool (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/introduction).
+The SpatialOS window isn't the only way to build your project - you can also build using the [`spatial` command-line tool (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli-introduction).
 
 1. Make sure the Unity Editor is closed.
 
@@ -94,16 +94,16 @@ The SpatialOS window isn't the only way to build your project - you can also bui
 
 2. In the root directory, to build workers for local deployment, run:
 
-    [`spatial worker build UnityWorker UnityClient --target=development` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-build).
+    [`spatial worker build UnityWorker UnityClient --target=development` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-build).
 
     Or, to build workers for cloud deployment, run:
 
-    [`spatial worker build UnityWorker UnityClient --target=deployment` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-build).
+    [`spatial worker build UnityWorker UnityClient --target=deployment` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-build).
 
 ## Updating the initial snapshot
 
 You must update your [initial
-snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#initial-snapshot) (or
+snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#initial-snapshot) (or
 generate a new one) if you make any changes that affect what's in the snapshot.
 This includes (but isn't limited to):
 
@@ -118,7 +118,7 @@ This includes (but isn't limited to):
   * changing the initial data of a component
   * changing per-component write access requirements
 
-To update the initial snapshot, use the [C# SDK (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/csharpsdk/using#snapshots) to manipulate it.
+To update the initial snapshot, use the [C# SDK (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/csharpsdk/using#snapshots) to manipulate it.
 
 ## Optimizing build times
 

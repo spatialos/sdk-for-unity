@@ -3,12 +3,12 @@ is experimental.
 
 # Entity pipeline
 
-The **entity pipeline** is the logic which a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker) uses to create and
+The **entity pipeline** is the logic which a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker) uses to create and
 manage their representations of entities.
 
-A SpatialOS [deployment (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#deploying) communicates with connected workers to instruct them
+A SpatialOS [deployment (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#deploying) communicates with connected workers to instruct them
 when an entity needs to be added/removed from the worker's view. For example, when an entity moves into or out of a
-worker's [checkout area (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#checking-out). The entity pipeline handles:
+worker's [checkout area (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#checking-out). The entity pipeline handles:
 
 * choosing how to represent an entity locally - in Unity, we use a prefab to represent an entity
 * dealing with changes in an entity's components (one being added or removed) and changes in the properties of those
@@ -104,7 +104,7 @@ entity spawning to the next frame if necessary.
     > Make sure that those two components are attached to every entity (see
     [Creating an entity](../interact-with-world/create-delete-entities.md#create-an-entity)
     for more details) and that your
-    [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/bridge-config#component-delivery) adds these
+    [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#component-delivery) adds these
     components to your worker.
     
     > If you can't include the components, consider replacing this block with a modified version of

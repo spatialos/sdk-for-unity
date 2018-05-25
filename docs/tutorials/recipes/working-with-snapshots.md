@@ -1,16 +1,16 @@
 # Work with snapshots in the Unity Editor
 
-This recipe gives you some tips about being more productive when manipulating [snapshots (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#snapshot).
+This recipe gives you some tips about being more productive when manipulating [snapshots (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#snapshot).
 The aim is to keep it simple and short and you will probably see many ways
 to extend it and generalise certain steps. Hopefully, you will be able to connect the dots to achieve the ideal
 workflow for your project. As always, if you have any questions, ask for advice on the [forums](https://forums.improbable.io).
 
 A frequent use-case is creating a snapshot from a scene or populating a scene from a snapshot during local development.
-The [Snapshots API (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/csharpsdk/using#snapshots) is very simple but paired
+The [Snapshots API (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/csharpsdk/using#snapshots) is very simple but paired
 with some Unity Editor scripts it can speed up the world design process.
 
 > Have a look at
-[**spatial project history snapshot** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-project-history-snapshot)
+[**spatial project history snapshot** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-project-history-snapshot)
 for the command-line tools to manage project snapshots.
 
 You can use the [Unity Starter Project](https://github.com/spatialos/StarterProject) as the starting point of this recipe,
@@ -247,7 +247,7 @@ If you're inspired by this, you could look into:
   to improve performance.
 - Slicing snapshots into layers based on components or entity types to allow designers to pre-apply filters on what
   they want to load again for better performance and faster iteration.
-- [Generating component serializers and deserializers from `schema` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/schema/custom-codegen) to replace the
+- [Generating component serializers and deserializers from `schema` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/schema/custom-codegen) to replace the
   `EntityBuilder` shown in this recipe with scripts which come for free every time you define a new component.
 
 Many designers use Digital Content Creators (DCC) in their workflow and will prefer to edit there instead of in Unity.

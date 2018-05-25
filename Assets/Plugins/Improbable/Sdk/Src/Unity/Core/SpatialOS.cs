@@ -50,7 +50,7 @@ namespace Improbable.Unity.Core
             };
         }
 
-        internal static bool ConnectionWasSuccesful { get; set; }
+        internal static bool ConnectionWasSuccessful { get; set; }
 
         /// <summary>
         ///     A callback that will be invoked when the deployment list has been retrieved from the Locator.
@@ -691,10 +691,21 @@ namespace Improbable.Unity.Core
             receivedDisconnectOp = disconnectOp;
             Disconnecting = true;
         }
+        
+        internal static void SignalApplicationQuit()
+        {
+            if (!ConnectionWasSuccessful)
+            {
+                receivedDisconnectOp = new DisconnectOp
+                {
+                    Reason = "An application quit signal was received."
+                };
+            }
+        }
 
         internal static void SignalDisconnection()
         {
-            if (!ConnectionWasSuccesful)
+            if (!ConnectionWasSuccessful)
             {
                 OnConnectionFailedInternal();
                 OnConnectionFailedWithReasonInternal();

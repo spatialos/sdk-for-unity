@@ -2,7 +2,7 @@
 
 In the [previous lesson](../../tutorials/cpp-worker-tutorial/add-cpp-worker.md) you added a worker called `PirateShipMovement` to your project. Now you
 will configure SpatialOS to launch your worker. You will also give
-`PirateShipMovement` [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) to the `ShipControls`
+`PirateShipMovement` [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) to the `ShipControls`
 component.
 
 You will learn:
@@ -15,7 +15,7 @@ You will learn:
 As it currently stands, workers of the `UnityWorker` type will have access to
 the `ShipControls` components of all pirate ships. To see why this is the case,
 recall [Lesson 2 of the Pirates tutorial](../../tutorials/pirates/lesson2.md) and how
-[entity templates (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity-template) for
+[entity templates (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity-template) for
 pirate ships were created for saving into the snapshot:
 
 ```csharp
@@ -38,7 +38,7 @@ You can see that when the `ShipControls` component is added, the method also set
 the write access for this component to `CommonRequirementSets.PhysicsOnly`. This
 requirement set is used by SpatialOS at runtime to determine which workers can
 send component updates for the data in this component. A worker declares the
-type of work it can do in its [worker attribute set (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker-attribute).
+type of work it can do in its [worker attribute set (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker-attribute).
 For example, workers of the `UnityClient` type have a `visual` attribute, while
 workers of the `UnityWorker` type have a `physics` attribute.
 

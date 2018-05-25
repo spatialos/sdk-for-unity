@@ -1,11 +1,11 @@
 # Creating entity ACLs
 
 This page explains how to construct an
-[ACL (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl) (access control list)
+[ACL (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl) (access control list)
 component in Unity. They're used to control which workers have read and write access to an entity's
 components.
 
-For background on the concept of ACLs, see [Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/understanding-access).
+For background on the concept of ACLs, see [Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/understanding-access).
 
 ## `EntityBuilder`
 
@@ -36,7 +36,7 @@ To build an ACL from scratch, start with `Acl.Build()`, for example:
 #### Worker attributes
 
 You can find which attributes a worker has in the [`bridge` section of its worker configuration file (SpatialOS documentation)]
-(https://docs.improbable.io/reference/12.2/shared/worker-configuration/bridge-config). Usually, a UnityWorker will have the attribute "physics", and a UnityClient
+(https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config). Usually, a UnityWorker will have the attribute "physics", and a UnityClient
 will have the attribute "visual".
 
 To build a `WorkerAttributeSet`, use this static method on `Acl`:
@@ -139,7 +139,7 @@ entityTemplate.MergeAcl(updatedAcl);  // Overwrites whichever ACLs are specified
 ### Example
 
 In this example, we want to create an entity with `Position` and `Combat` components. `Position` is defined
-in the [standard schema library (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/schema/standard-schema-library); `Combat is defined as follows:
+in the [standard schema library (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/schema/standard-schema-library); `Combat is defined as follows:
 
 ```schemalang
 package improbable.general;

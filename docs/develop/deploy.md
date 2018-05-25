@@ -1,7 +1,7 @@
 # Deploying
 
 This page is about deploying from the Unity Editor. If you want to build from the command line, see
-[Deploying locally from the command line (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/deploy/deploy-local).
+[Deploying locally from the command line (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/deploy/deploy-local).
 
 ## Run a local deployment
 
@@ -11,7 +11,7 @@ This page is about deploying from the Unity Editor. If you want to build from th
     This opens a console running `spatial local launch`.
 
 When SpatialOS starts successfully, you should see `SpatialOS ready` in the console. At this point, you can access the
-[Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#inspector) at [http://localhost:21000/inspector](http://localhost:21000/inspector).
+[Inspector (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#inspector) at [http://localhost:21000/inspector](http://localhost:21000/inspector).
 
 ## Connect a client
 
@@ -30,7 +30,7 @@ Once the deployment is running, to connect a Unity client:
 
 ## Deploying to the cloud
 
-For information about deploying to the cloud, see [Deploying to the cloud (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/deploy/deploy-cloud).
+For information about deploying to the cloud, see [Deploying to the cloud (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/deploy/deploy-cloud).
 
 ### Unity cheat sheet
 

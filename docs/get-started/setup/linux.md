@@ -43,7 +43,7 @@ Install Unity version **2017.3.0**:
 3. Run the installer.
 4. Install Unity into the directory `/opt/Unity`.
 
-    [`spatial worker build` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/spatial-cli/spatial-worker-build) expects to find Unity in this directory.
+    [`spatial worker build` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-build) expects to find Unity in this directory.
 5. Set the environment variable `UNITY_HOME` to `/opt/Unity`.
 6. Launch Unity and complete the registration process.
 

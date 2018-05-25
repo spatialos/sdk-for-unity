@@ -1,19 +1,19 @@
 # Creating and deleting entities
 
-This page covers creating and deleting [entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity) in Unity.
+This page covers creating and deleting [entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity) in Unity.
 
 ## Prerequisites
 
-* In order to create or delete an entity, a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#worker) must have
+* In order to create or delete an entity, a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker) must have
 **permission** to do so. For more information, see
-[Worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/worker-configuration/permissions).
+[Worker permissions (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/permissions).
 * If you send a creation or deletion command using `SpatialOS.Commands`, the MonoBehaviour you send it from needs
-a [**component writer** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers): a worker can only send a command when
-it has [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) to some component.
+a [**component writer**](interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers): a worker can only send a command when
+it has [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) to some component.
 
     > The component writer helps prevent commands accidentally being sent twice when
-    two workers have the same entity [checked out (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#checking-out).
-    Because only [one worker can have write access to a component at a time (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/understanding-access),
+    two workers have the same entity [checked out (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#checking-out).
+    Because only [one worker can have write access to a component at a time (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/understanding-access),
     the MonoBehaviour from which the command is sent can only be enabled (and therefore executed) in one worker:
     so the command is only sent once.
 
@@ -29,7 +29,7 @@ it has [write access (SpatialOS documentation)](https://docs.improbable.io/refer
 To create an entity, you [create the entity's template](#1-create-an-entity-template), then 
 [send the `CreateEntity` command](#2-create-an-entity).
 
-> An [**entity template** (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#entity-template) is an object
+> An [**entity template** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#entity-template) is an object
 that specifies all the components that the entity has.
 
 To create an entity, you need:
@@ -53,13 +53,13 @@ All entities must have at least these three components:
 * `EntityAcl`, which controls the read and write access that workers have to the entity and its components
 
 Most entities also should have a `Persistence` component, which means that you want it to persist in
-[snapshots (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#snapshot).
+[snapshots (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#snapshot).
 The EntityBuilder pattern requires you to specify whether or not you want your entity to be persistent.
 
 For more information about the required components, see the
-[standard schema library (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/schema/standard-schema-library)) page.
-For more conceptual information about ACLs, see [Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/understanding-access).
-For information about designing an entity, see the [Designing entities (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/design-entities) page.
+[standard schema library (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/schema/standard-schema-library)) page.
+For more conceptual information about ACLs, see [Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/understanding-access).
+For information about designing an entity, see the [Designing entities (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/design-entities) page.
 
 #### Using EntityBuilder
 
@@ -68,12 +68,12 @@ When you use `EntityBuilder`, you add the required components in order, then add
 
 0. `Position`
 0. `Metadata`
-0. whether or not you want [persistence (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#persistence)
-0. [read ACLs (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl)
+0. whether or not you want [persistence (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#persistence)
+0. [read ACLs (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl)
 0. your own components
 
 As you add each component, you specify which workers can
-[write (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) to the component. For example:
+[write (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) to the component. For example:
 
 ``` 
 var myEntityTemplate = EntityBuilder.Begin()
@@ -96,8 +96,8 @@ var myEntityTemplate = EntityBuilder.Begin()
     .Build();
 ```
 
-(optional) If you need to set [write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#read-and-write-access-authority) 
-on the [`EntityACL` component (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#acl) itself,
+(optional) If you need to set [write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#read-and-write-access-authority) 
+on the [`EntityACL` component (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#acl) itself,
 call `SetEntityAclComponentWriteAccess()` as shown below:
 
 ```
@@ -112,7 +112,7 @@ var myEntityTemplate = EntityBuilder.Begin()
 ```
 
 > To construct entity templates without using `EntityBuilder`, use the underlying
-[C# API (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/csharpsdk/using#creating-and-deleting-entities).
+[C# API (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/csharpsdk/using#creating-and-deleting-entities).
 
 #### Troubleshooting
 

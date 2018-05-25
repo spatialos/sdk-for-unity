@@ -71,8 +71,8 @@ proxy rules.
     deployments via the `spatial local` command.
 
 * You must **allow TCP and UDP outbound connections on the 8000-8999 port range** for connecting clients to a
-[cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#cloud-deployment). This is also a requirement for any third-party users who want to connect to your deployments (when you share a game).
-* You must keep port `22000` free for [local deployments (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#local-deployment).
+[cloud deployment (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#cloud-deployment). This is also a requirement for any third-party users who want to connect to your deployments (when you share a game).
+* You must keep port `22000` free for [local deployments (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#local-deployment).
 
 ## Deployment environments
 

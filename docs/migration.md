@@ -19,13 +19,14 @@ Follow the steps below for every SpatialOS Unity project you want to upgrade and
 1. Run `spatial clean`.
 1. Clone the [SpatialOS Unity SDK GitHub repository](https://github.com/spatialos/UnitySDK).
 1. From the cloned repository, move the `Assets` and `Improbable` directories into your project’s Unity worker directory (this is usually `<root>/workers/unity`).
-	If you are asked whether to merge or replace the `Assets` folder, select merge, otherwise you will delete the assets that your game depends upon.
+	If you are asked whether to merge or replace the `Assets` folder, select `merge` otherwise you will delete the assets that your game depends upon.
 1. Still in the Unity worker directory, edit the `spatialos.UnityClient.worker.json` file to remove `"generated_build_scripts_type":"unity"` completely
 and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".` Be sure to remove the comma after `.json"`.
 1. Edit the `spatialos.UnityWorker.worker.json` file to remove  `"generated_build_scripts_type":"unity"` completely
 and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_script/spatialos.unity.worker.build.json".` Be sure to remove the comma after `.json"`.
 1. Delete the `spatialos_worker_packages.json` file.
 1. In the root of your project, edit the `spatialos.json` file in two places so that `"version"` is `“13.0.0”`.
+1. Set the file permissions to executable in `workers/unity/Improbable/bin/macos/`.
 1. Run `spatial clean` (again).
 1. Run `spatial worker build`.
 1. In your project’s root directory and `workers/unity` directory, edit the following lines in the version control system (VCS) ignore files:
@@ -38,10 +39,11 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
         * `workers/unity/Assets/Plugins/Improbable/Editor/Generated.meta`
         * `workers/unity/Assets/Plugins/Improbable/Generated/`
         * `workers/unity/Assets/Plugins/Improbable/Generated.meta`
+        * `workers/unity/Assets/Plugins/Improbable/EntityPrefabs/`
+        * `workers/unity/Assets/Plugins/Improbable/EntityPrefabs.meta`
         * `workers/unity/Assets/Plugins/Improbable/Sdk/Dll/Generated.Code.*`
 
-**Note:** All our starter projects the VCS ignore files are not set as above, so if your project is based on any of these starter projects, you need to edit the VCS ignore files as described in step 10.
-
+**Note:** If you are migrating a starter project that you downloaded before 2018-05-15 the VCS ignore files are not set as above, so you need to edit the VCS ignore files as described above.
 
 ## Detailed guide
 
@@ -68,6 +70,8 @@ which contains your Unity project’s workers. (It is the directory which contai
 &nbsp;
 For example:
 `~/mySpatialOSgame/workers/unity`
+
+If you are asked whether to merge or replace the `Assets` folder, select `merge` otherwise you will delete the assets that your game depends upon.
 
 2. In the same directory, edit the `spatialos.UnityClient.worker.json` file to remove `"generated_build_scripts_type":"unity"` completely
 and to replace `"spatialos.unity.client.build.json"` with `"Improbable/build_script/spatialos.unity.client.build.json".` Make sure you remove the comma after `.json"`.
@@ -112,6 +116,14 @@ The file should now look similar to this:
 ```
 
 6. In the root directory of your project, run `spatial clean` (again).
+
+### 4. Make sure the file permissions are correct
+
+If you are on a Mac, make sure that the file permissions for the contents of the `workers/unity/Improbable/bin/macos/` directory are set to allow execution. Still in a terminal window in your project's root directory, enter:
+
+```bash
+chmod +x ./workers/unity/Improbable/bin/macos/*
+```
 
 ### 5. Update the version control ignore files
 

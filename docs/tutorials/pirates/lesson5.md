@@ -54,7 +54,7 @@ As a developer, it doesn't matter to you whether you're writing code for A or B.
 and make sure the right code is being run using the `[WorkerType]` and `[Require]` annotations.
 
 > For a deeper discussion of this, see
-[Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/design/understanding-access).
+[Understanding write access (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/design/understanding-access).
 
 ### Access control lists
 

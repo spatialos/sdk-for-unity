@@ -114,7 +114,7 @@ In lesson 3, you used the properties on the `ShipControls` component to move pir
 you're going to add something new to `ShipControls`.
 
 Components are defined in a project's **schema**. SpatialOS uses this schema to generate code which workers use to read and 
-write to components. It's written in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schemalang), 
+write to components. It's written in [schemalang (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schemalang), 
 and it's located in the `schema` directory of the project.
 
 1. From the project root directory, navigate to `schema/improbable/ship/ShipControls.schema`.
@@ -436,12 +436,12 @@ To stop `spatial local launch` running, switch to that terminal window and use `
 
 In this lesson, you:
 
-* learned what an [event (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#event) is
-* learned what [schema (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#schema) is
-* added a new event to a [component (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#component) in schema
-* ran [codegen (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#code-generation)
+* learned what an [event (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#event) is
+* learned what [schema (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#schema) is
+* added a new event to a [component (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#component) in schema
+* ran [codegen (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#code-generation)
 * triggered an event
-* used a [component `Reader` (SpatialOS documentation)](https://docs.improbable.io/reference/12.2/shared/glossary#readers-and-writers)
+* used a [component `Reader` (SpatialOS documentation)](../../interact-with-world/interact-components.md#Example-of-MonoBehaviours-component-readers-and-writers)
 * registered callbacks to watch for the event
 * responded to the event by firing cannons on all workers
 
