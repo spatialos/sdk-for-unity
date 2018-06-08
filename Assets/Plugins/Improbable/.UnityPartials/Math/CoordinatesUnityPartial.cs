@@ -11,6 +11,11 @@ namespace Improbable
         ///     A Coordinates with 0 in each dimension.
         /// </summary>
         public static readonly Coordinates ZERO = new Coordinates(0, 0, 0);
+        
+        /// <summary>
+        ///     A Coordinates with 1 in each dimension.
+        /// </summary>
+        public static readonly Coordinates ONE = new Coordinates(1, 1, 1);
 
         public static Vector3d operator -(Coordinates v1, Coordinates v2)
         {
@@ -47,6 +52,16 @@ namespace Improbable
             return new Coordinates(a.x + b.x, a.y + b.y, a.z + b.z);
         }
 
+        public static Coordinates operator *(Coordinates a, double b)
+        {
+            return new Coordinates(a.x * b, a.y * b, a.z * b);
+        }
+
+        public static Coordinates operator /(Coordinates a, double b)
+        {
+            return new Coordinates(a.x / b, a.y / b, a.z / b);
+        }
+
         public static Coordinates operator -(Vector3d v1, Coordinates v2)
         {
             return new Coordinates(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
@@ -75,6 +90,11 @@ namespace Improbable
         public static Coordinates operator +(Vector3 a, Coordinates b)
         {
             return new Coordinates(a.x + b.x, a.y + b.y, a.z + b.z);
+        }
+
+        public static Coordinates operator *(double a, Coordinates b)
+        {
+            return new Coordinates(a * b.x, a * b.y, a * b.z);
         }
 
         /// <summary>
