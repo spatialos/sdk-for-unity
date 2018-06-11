@@ -29,7 +29,6 @@ have a combined SpatialOS and SpatialOS Unity SDK bundle. To get the separated v
 - Setup guides
     - [Windows](get-started/setup/win.md)
     - [macOS](get-started/setup/mac.md)
-    - [Linux](get-started/setup/linux.md)
 - [System requirements](get-started/requirements.md)
 ### Learning
 - [Learning resources](tutorials/learning-resources.md)

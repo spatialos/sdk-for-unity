@@ -10,8 +10,8 @@ running `spatial build`. Set the `UNITY_HOME` environment variable to the folder
 
 For example:
 
-  * On Windows, set `UNITY_HOME` to `C:\Program Files\Unity 2017.3.0`.
-  * On macOS, set `UNITY_HOME` `/Applications/Unity2017.3.0`. __This path cannot contain any spaces.__
+  * On Windows, set `UNITY_HOME` to `C:\Program Files\Unity 2018.1.3`.
+  * On macOS, set `UNITY_HOME` `/Applications/Unity2018.1.3`. __This path cannot contain any spaces.__
 
 ## Directory structure
 

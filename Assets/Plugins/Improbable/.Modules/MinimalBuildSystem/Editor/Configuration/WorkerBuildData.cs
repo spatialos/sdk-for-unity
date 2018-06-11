@@ -9,12 +9,7 @@ namespace Improbable.Unity.MinimalBuildSystem.Configuration
 {
     public class WorkerBuildData
     {
-        internal const BuildTarget OSXBuildTarget =
-#if UNITY_2017_3_OR_NEWER
-            BuildTarget.StandaloneOSX;
-#else
-            BuildTarget.StandaloneOSXIntel64;
-#endif
+        internal const BuildTarget OSXBuildTarget = BuildTarget.StandaloneOSX;
 
         private readonly WorkerPlatform workerPlatform;
         private readonly BuildTarget buildTarget;

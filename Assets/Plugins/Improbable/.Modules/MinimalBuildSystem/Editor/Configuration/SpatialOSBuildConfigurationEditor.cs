@@ -409,11 +409,7 @@ namespace Improbable.Unity.MinimalBuildSystem.Configuration
 
         private static IDisposable IndentLevelScope(int increment)
         {
-#if UNITY_2017_3_OR_NEWER
             return new EditorGUI.IndentLevelScope(increment);
-#else
-            return new FallbackIndentLevelScope(increment);
-#endif
         }
     }
 }

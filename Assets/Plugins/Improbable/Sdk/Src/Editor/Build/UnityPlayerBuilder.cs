@@ -8,6 +8,9 @@ using Improbable.Unity.Assets;
 using Improbable.Unity.EditorTools.Util;
 using Improbable.Unity.Util;
 using UnityEditor;
+#if UNITY_2018_1_OR_NEWER
+using UnityEditor.Build.Reporting;
+#endif
 using UnityEngine;
 
 namespace Improbable.Unity.EditorTools.Build
@@ -51,15 +54,6 @@ namespace Improbable.Unity.EditorTools.Build
             if (platform.ToLower() != "current")
             {
                 var value = (BuildTarget) Enum.Parse(typeof(BuildTarget), platform);
-#if UNITY_2017_3_OR_NEWER
-#pragma warning disable 618
-                if (value == BuildTarget.StandaloneOSXIntel64)
-                {
-                    Debug.LogWarningFormat("{0} is deprecated and will be removed. Please update {1} to use {2} instead.", BuildTarget.StandaloneOSXIntel64, UnityPlayerBuilders.PlayerConfigurationFilePath, BuildTarget.StandaloneOSX);
-                    value = BuildTarget.StandaloneOSX;
-                }
-#pragma warning restore 618
-#endif
                 return value;
             }
 
@@ -73,11 +67,7 @@ namespace Improbable.Unity.EditorTools.Build
                 case RuntimePlatform.WindowsEditor:
                     return BuildTarget.StandaloneWindows;
                 case RuntimePlatform.OSXEditor:
-#if UNITY_2017_3_OR_NEWER
                     return BuildTarget.StandaloneOSX;
-#else
-                    return BuildTarget.StandaloneOSXIntel64;
-#endif
                 case RuntimePlatform.LinuxEditor:
                     return BuildTarget.StandaloneLinux64;
                 default:
@@ -120,11 +110,7 @@ namespace Improbable.Unity.EditorTools.Build
             {
                 switch (BuildTarget)
                 {
-#if UNITY_2017_3_OR_NEWER
                     case BuildTarget.StandaloneOSX:
-#else
-                    case BuildTarget.StandaloneOSXIntel64:
-#endif
                     {
                         return PathUtil.Combine(PackagePath, string.Format("{0}.app", PackageName), "Contents", "Resources", "Data", "Managed");
                     }
@@ -202,11 +188,7 @@ namespace Improbable.Unity.EditorTools.Build
                     return new PlatformData("Managed", "Windows", "_Data", ".exe");
                 case BuildTarget.StandaloneWindows64:
                     return new PlatformData("Managed", "Windows", "_Data", ".exe");
-#if UNITY_2017_3_OR_NEWER
                 case BuildTarget.StandaloneOSX:
-#else
-                    case BuildTarget.StandaloneOSXIntel64:
-#endif
                     return new PlatformData("Contents/Data/Managed", "Mac", ".app", "");
                 case BuildTarget.StandaloneLinux64:
                     return new PlatformData("Managed", "Linux", "_Data", "");
@@ -228,12 +210,19 @@ namespace Improbable.Unity.EditorTools.Build
 
             var playerOptions = new BuildPlayerOptions { target = BuildTarget, locationPathName = tempExecutablePath, options = options, scenes = scenes };
             var buildErrorMessage = BuildPipeline.BuildPlayer(playerOptions);
+#if UNITY_2018_1_OR_NEWER
+            if (buildErrorMessage.summary.result != BuildResult.Succeeded)
+            {
+                throw new ApplicationException(string.Format("Failed to build player {0} due to {1} errors", BuildConfigComment,
+                                                             buildErrorMessage.summary.totalErrors));
+            }
+#else
             if (!string.IsNullOrEmpty(buildErrorMessage))
             {
                 throw new ApplicationException(string.Format("Failed to build player {0} due to {1}", BuildConfigComment,
                                                              buildErrorMessage));
             }
-
+#endif
             Debug.LogFormat("Built player {0} into {1}", BuildConfigComment, PackagePath);
         }
 

@@ -16,8 +16,8 @@ namespace Improbable.Unity.EditorTools
     [InitializeOnLoad]
     public class SpatialOsWindow : EditorWindow
     {
-        private const string MinVersion = "5.6.0";
-        private const string MaxVersion = "2017.3.0";
+        private const string MinVersion = "2017.3.0";
+        private const string MaxVersion = "2018.1.3";
 
         private static SharedGuiContent sharedContent;
         private static string versionMessage;

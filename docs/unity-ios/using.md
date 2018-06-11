@@ -1,7 +1,9 @@
 > Building Unity iOS workers is experimental.
 
+> iOS support has not been tested with Unity 2018.x.
+
 # Building for iOS targets in Unity
- 
+
 This page describes the required steps for a SpatialOS Unity project to build for iOS build targets. It assumes that you have an existing SpatialOS project, which you are intending to add iOS support using Unity.
 
 While following this guide, you will adjust some of the SpatialOS scripts and Unity settings to prepare everything for iOS. This is needed to ensure that the Xcode project contains the necessary code to run your iOS worker successfully. The resulting Xcode project suffers from cyclic dependencies due to a bug in Unity and we provide you with a script to fix this.
@@ -175,7 +177,7 @@ The following build settings are recommended for compatibility with SpatialOS.
 1. Configure `Other Settings` with the following settings:
     + Configuration:
          * Scripting Backend: `IL2CPP`
-         * API Compatibility Level: `.NET 2.0`  
+         * API Compatibility Level: `.NET 2.0`
          * Target SDK: `Device SDK` or `Simulator SDK`
          * Target minimum iOS Version: `10.2` or higher
          * Allow downloads over HTTP (nonsecure): Checked

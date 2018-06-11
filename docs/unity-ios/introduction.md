@@ -1,5 +1,7 @@
 > Building Unity iOS workers is experimental.
 
+> iOS support has not been tested with Unity 2018.x.
+
 # Unity iOS
 
 Building Unity client workers for iOS platforms is experimental.
@@ -8,7 +10,7 @@ You can run your SpatialOS Unity client workers on both iOS devices and simulato
 ## Requirements
 
 * At least MacOS 10.12.6 (Sierra) and with Xcode 9 installed.
-* Unity 2017.3.0 installed.
+* Unity 2018.1.3 installed.
 * "iOS Build Support" installed as an additional Unity component (specified when you install Unity).
 * Active enrolment in the [Apple Developer Program for iOS](https://developer.apple.com/programs/),
 either as a team or as an individual.

@@ -20,13 +20,7 @@ namespace Improbable.Unity.EditorTools.PrefabExport
             {
                 { BuildTarget.StandaloneWindows, Platform.BuildPlatform.Windows },
                 { BuildTarget.StandaloneWindows64, Platform.BuildPlatform.Windows },
-#if UNITY_2017_3_OR_NEWER
                 { BuildTarget.StandaloneOSX, Platform.BuildPlatform.OSX },
-#else
-                { BuildTarget.StandaloneOSXIntel, Platform.BuildPlatform.OSX },
-                { BuildTarget.StandaloneOSXIntel64, Platform.BuildPlatform.OSX },
-                { BuildTarget.StandaloneOSXUniversal, Platform.BuildPlatform.OSX },
-#endif
                 { BuildTarget.StandaloneLinux, Platform.BuildPlatform.Linux },
                 { BuildTarget.StandaloneLinux64, Platform.BuildPlatform.Linux },
                 { BuildTarget.iOS, Platform.BuildPlatform.iOS }
