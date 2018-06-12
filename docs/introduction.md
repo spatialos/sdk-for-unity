@@ -4,21 +4,20 @@
 
 > You need to set up SpatialOS before you can work on a project using the SpatialOS Unity SDK. To set up SpatialOS, download and set up the `spatial` CLI. For more information, see the setup guides:
 [Windows](get-started/setup/win.md),
-[macOS](get-started/setup/mac.md),
-[Linux](get-started/setup/linux.md).
+[macOS](get-started/setup/mac.md).
 
 You can use the game engine [Unity](https://unity3d.com/) as a [worker (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker)
 in a SpatialOS project, to add physics, game logic, and visualization to a SpatialOS simulated world. We provide a
 Unity SDK to make it easier to use Unity as a worker.
 
-> **Compatible Unity versions**: Unity versions **5.6.0** and **2017.3.0** have been tested with SpatialOS. Other versions may work fine, but have not been extensively tested.
+> **Compatible Unity versions**: Unity versions **2017.3.0** and **2018.1.3** have been tested with SpatialOS. Other versions may work fine, but have not been extensively tested.
 
 **License**
 * See the [license](../LICENSE.md).
 
 **Documentation**
 * The SpatialOS documentation is on the [SpatialOS documentation website](https://docs.improbable.io).
-* The Unity SDK documentation is on [GitHub](start-here-table-of-contents.md). 
+* The Unity SDK documentation is on [GitHub](start-here-table-of-contents.md).
 
 ## The relationship between SpatialOS and Unity
 

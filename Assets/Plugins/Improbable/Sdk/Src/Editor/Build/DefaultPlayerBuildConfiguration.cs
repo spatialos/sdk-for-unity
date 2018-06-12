@@ -32,11 +32,7 @@ namespace Improbable.Unity.EditorTools.Build
                         Targets = new List<string>
                         {
                             BuildTarget.StandaloneWindows.ToString(),
-#if UNITY_2017_3_OR_NEWER
                             BuildTarget.StandaloneOSX.ToString()
-#else
-                            BuildTarget.StandaloneOSXIntel64.ToString()
-#endif
                         }
                     }
                 },
