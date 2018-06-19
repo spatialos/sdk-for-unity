@@ -109,7 +109,7 @@ Or, if you're in Europe:
 
 2. Click on the deployment's name (`piratestutorial`). This opens an overview of your deployment, which looks something like this:
 
-    <center>![Pirates deployment overview](../../assets/pirates/ext-cloud/deployment-page.png)</center>
+    ![Pirates deployment overview](../../assets/pirates/ext-cloud/deployment-page.png)
 
 3. To get links to share the game with others, click **Share** (on the top left). 
 
@@ -121,7 +121,7 @@ Or, if you're in Europe:
 
     This prompts you to install the Improbable Launcher:
 
-    <center>![Install Launcher popup](../../assets/pirates/ext-cloud/deployment-launch.png)</center>
+    ![Install Launcher popup](../../assets/pirates/ext-cloud/deployment-launch.png)
 
 4. Install the Launcher.
 
@@ -129,7 +129,7 @@ Or, if you're in Europe:
 
 As your friends and colleagues join, you'll see new pirate ships appear in your client:
 
-<center>![Sea with two pirate ships](../../assets/pirates/ext-cloud/many-players.png)</center>
+![Sea with two pirate ships](../../assets/pirates/ext-cloud/many-players.png)
 
 ## 6. Stop the deployment
 

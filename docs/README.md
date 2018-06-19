@@ -1,4 +1,3 @@
-![SpatialOS Unity SDK documentation](assets/unity-sdk-header.png)
 
 ### Welcome to the SpatialOS Unity SDK documentation
 
