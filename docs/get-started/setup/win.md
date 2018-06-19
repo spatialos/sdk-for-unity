@@ -26,7 +26,7 @@ you **must** follow these steps, because SpatialOS only works with specific vers
 
 1. Launch Unity and complete the registration process.
 
-## 5. Next steps
+## 3. Next steps
 
 You've now set up your machine for development with SpatialOS!
 

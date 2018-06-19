@@ -1,4 +1,3 @@
-![SpatialOS Unity SDK documentation](docs/assets/unity-sdk-header.png)
 
 # SpatialOS Unity SDK
 
@@ -10,7 +9,7 @@ Use the SpatialOS Unity SDK to create games with persistent online worlds.
 Together with the SpatialOS [spatial CLI](https://docs.improbable.io/reference/13.0/shared/spatial-cli-introduction), the SpatialOS Unity SDK
 allows you to use [Unity](https://www.unity3d.com) to create games for the [SpatialOS](https://improbable.io/games) platform.
 To help you get started, there are [tutorials](docs/tutorials/learning-resources.md) to follow and [example games](docs/repositories.md) to
-experiment with.  In addition to the [SpatialOS Unity SDK documentation](docs/start-here-table-of-contents.md) in this repository,  you can find out more about
+experiment with.  In addition to the [SpatialOS Unity SDK documentation](docs/README.md) in this repository,  you can find out more about
 SpatialOS at [docs.improbable.io](https://docs.improbable.io).
 
 ## Requirements
@@ -36,9 +35,9 @@ See [System requirements: software](docs/get-started/requirements.md#software) f
 To get the separated version, see [Upgrading to SpatialOS 13.0 and migrating to the Unity SDK 1.0.0](docs/migration.md).
 
 ## Documentation
-**Unity SDK documentation:** [This repository in GitHub](docs/start-here-table-of-contents.md)
+**Unity SDK documentation:** [This repository in GitHub](docs/README.md)
 
 **SpatialOS documentation:** [docs.improbable.io.](https://docs.improbable.io.)
 
 ## Community
-**Visit:** Join us at [https://forums.improbable.io](https://forums.improbable.io) for technical questions and issues.
+**Visit:** Join us at [forums.improbable.io](https://forums.improbable.io) for technical questions and issues.

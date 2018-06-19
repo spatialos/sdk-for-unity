@@ -29,7 +29,7 @@ requires specific build support.
 > **Important**: Once you've set up a project, you'll need to set the path to `spatial` from the SpatialOS window in the Unity Editor.
 See the [Unity SpatialOS window](../../reference/spatialos-window.md#settings) page for instructions.
 
-## 5. Next steps
+## 3. Next steps
 
 You've now set up your machine for development with SpatialOS!
 

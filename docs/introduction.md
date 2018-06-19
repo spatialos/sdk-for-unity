@@ -1,5 +1,3 @@
-![SpatialOS Unity SDK documentation](assets/unity-sdk-header.png)
-
 # Introduction to the SpatialOS Unity SDK
 
 > You need to set up SpatialOS before you can work on a project using the SpatialOS Unity SDK. To set up SpatialOS, download and set up the `spatial` CLI. For more information, see the setup guides:
@@ -17,7 +15,7 @@ Unity SDK to make it easier to use Unity as a worker.
 
 **Documentation**
 * The SpatialOS documentation is on the [SpatialOS documentation website](https://docs.improbable.io).
-* The Unity SDK documentation is on [GitHub](start-here-table-of-contents.md).
+* The Unity SDK documentation is on [GitHub](README.md).
 
 ## The relationship between SpatialOS and Unity
 
