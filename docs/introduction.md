@@ -78,6 +78,6 @@ These aren't required, but when you're developing with Unity, you might find the
 
 ## Internal features
 
-The SptiaLOS Unity SDK is provided as source files to aid in debugging.
+The SpatialOS Unity SDK is provided as source files to aid in debugging.
 This means that `internal` classes, structs and methods are all visible to your code.
 You should take care to avoid using these items, as they can change without notice outside of major versions.
