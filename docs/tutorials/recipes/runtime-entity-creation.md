@@ -57,13 +57,13 @@ package improbable.player;
 
 import "improbable/standard_library.schema";
 
-type SpawnData {
+type Spawn {
   Coordinates initial_position = 1;
 }
 
 component CubeSpawner {
   id = 1004;
-  event SpawnData spawn;
+  event Spawn spawn;
 }
 ```
 
