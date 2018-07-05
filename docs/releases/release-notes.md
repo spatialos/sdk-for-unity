@@ -1,5 +1,14 @@
 # Release notes
 
+## SpatialOS Unity SDK 2.0.1
+_Released: 2018-07-05_
+
+### New features
+* We have upgraded to use SpatialOS [13.1.0](https://docs.improbable.io/reference/13.1/releases/release-notes#13-1-0).
+
+### Fixes
+* The timeout argument for sending commands (both schema defined commands and worker commands such as `CreateEntity`, `DeleteEntity`, ...) is now properly respected.
+
 ## SpatialOS Unity SDK 2.0.0
 _Released: 2018-06-06_
 
@@ -18,7 +27,6 @@ You should change this to `StandaloneOSX`.
 _Released: 2018-05-24_
 
 ### Fixes
-
 * Deregistering a command response twice will no longer throw an exception.
 * When a user exits a game while trying to connect, the connection failure callback reason now says "An application quit signal was received." Previously the reason was blank.
 * The worker now sends component updates correctly including when its authority loss is imminent.
