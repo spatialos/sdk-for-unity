@@ -12,7 +12,7 @@
             "--output=.spatialos/generated/std",
             "--language=csharp",
             "--input=../../build/dependencies/schema/standard_library",
-            "--version=13.0.0"
+            "--version=13.1.0"
           ]
         },
         {
@@ -25,7 +25,7 @@
             "--language=csharp",
             "--input=../../schema",
             "--repository=../../build/dependencies/schema",
-            "--version=13.0.0"
+            "--version=13.1.0"
           ]
         },
         {
@@ -37,7 +37,7 @@
             "--output=.spatialos/json/std",
             "--language=ast_json",
             "--input=../../build/dependencies/schema/standard_library",
-            "--version=13.0.0"
+            "--version=13.1.0"
           ]
         },
         {
@@ -50,7 +50,7 @@
             "--language=ast_json",
             "--input=../../schema",
             "--repository=../../build/dependencies/schema",
-            "--version=13.0.0"
+            "--version=13.1.0"
           ]
         },
         {

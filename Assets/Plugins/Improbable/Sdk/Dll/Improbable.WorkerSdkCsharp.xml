@@ -498,7 +498,7 @@
             <summary>
             Sends an acknowledgement of the receipt of an AuthorityLossImminent authority change for a
             component. Sending the acknowledgement signifies that this worker is ready to lose authority
-            over the component.
+            over the component for the given entity.
             </summary>
         </member>
         <member name="M:Improbable.Worker.Connection.SendComponentUpdate``1(Improbable.EntityId,Improbable.Worker.IComponentUpdate{``0},System.Boolean)">
@@ -875,9 +875,6 @@
             <remarks>
             This object should not be modified concurrently by multiple threads.
             </remarks>
-        </member>
-        <member name="M:Improbable.Worker.Dispatcher.Dispose">
-            <inheritdoc cref="T:System.IDisposable"/>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnDisconnect(System.Action{Improbable.Worker.DisconnectOp})">
             <summary>
@@ -1330,6 +1327,11 @@
             Connection parameters specific to TCP connections.
             </summary>
         </member>
+        <member name="F:Improbable.Worker.NetworkParameters.ConnectionTimeoutMillis">
+            <summary>
+            Timeout for the connection to SpatialOS to be established.
+            </summary>
+        </member>
         <member name="F:Improbable.Worker.ProtocolLoggingParameters.LogPrefix">
             <summary>
             Log file names are prefixed with this prefix, are numbered, and have the extension .log.
@@ -1428,6 +1430,16 @@
         <member name="F:Improbable.Worker.LocatorParameters.Steam">
             <summary>
             Parameters used if the CredentialsType is Steam.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.LocatorParameters.Logging">
+            <summary>
+            Parameters for configuring logging.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.LocatorParameters.EnableLogging">
+            <summary>
+            Whether to enable logging for the Locator flow.
             </summary>
         </member>
         <member name="T:Improbable.Worker.Query.IConstraint">
@@ -1603,11 +1615,16 @@
             Registers that a call is exited to update the state of the map accordingly.
             </summary>
         </member>
-        <member name="M:Improbable.Worker.Internal.DisposableObjects.RequireObjectNotDisposed(Improbable.Worker.Internal.CptrHandle,System.IDisposable)">
+        <member name="T:Improbable.Worker.Internal.Contract">
             <summary>
-            Checks that a disposableObject representing an unmanaged handle is not disposed
-            (assuming that in such a context it can no longer be used). If the handle has been
-            disposed of, this throws an ObjectDisposedException. Otherwise, nothing happens.
+            Class providing methods similar to System.Diagnostics.Contract in .NET 4.0.
+            </summary>
+        </member>
+        <member name="M:Improbable.Worker.Internal.Contract.Requires``1(System.Boolean,System.String,System.String)">
+            <summary>
+            Throws the exception <typeparamref name="TException"/> with the parameter paramName
+            that caused the exception and the exception message passed to the method if
+            <paramref name="condition"/> is false.
             </summary>
         </member>
         <member name="T:Improbable.Worker.Internal.MonoPInvokeCallbackAttribute">
@@ -1640,11 +1657,19 @@
             Returns null if the componentId is unknown.
             </summary>
         </member>
-        <member name="M:Improbable.Worker.Internal.ComponentDatabase.MetaclassToId``1">
+        <member name="M:Improbable.Worker.Internal.ComponentDatabase.MetaclassToId``1(System.String)">
             <summary>
-            Returns the component ID associated with a metaclass.
+            Returns the component ID associated with a component metaclass.
             </summary>
-            <exception cref="T:System.Collections.Generic.KeyNotFoundException">
+            <exception cref="T:System.ArgumentException">
+            <typeparamref name="C"/> is not a known metaclass.
+            </exception>
+        </member>
+        <member name="M:Improbable.Worker.Internal.ComponentDatabase.CommandMetaclassToId``1(System.String)">
+            <summary>
+            Returns the component ID associated with a command metaclass.
+            </summary>
+            <exception cref="T:System.ArgumentException">
             <typeparamref name="C"/> is not a known metaclass.
             </exception>
         </member>

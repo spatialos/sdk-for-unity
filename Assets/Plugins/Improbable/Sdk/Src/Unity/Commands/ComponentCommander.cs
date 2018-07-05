@@ -13,7 +13,7 @@ namespace Improbable.Unity.Core
 {
     class ComponentCommander : IComponentCommander
     {
-        private const uint DefaultCommandTimeoutMs = 1000;
+        public const uint DefaultCommandTimeoutMs = 1000;
 
         private readonly HashSet<Type> commandResponseThunksRegistered;
         private readonly Dictionary<uint, ICommandCallbackWrapper> requestIdToCallback;
@@ -94,7 +94,7 @@ namespace Improbable.Unity.Core
                 return new Option<uint>();
             }
 
-            var timeoutMs = timeout.HasValue ? (uint) timeout.Value.Milliseconds : DefaultCommandTimeoutMs;
+            var timeoutMs = timeout.HasValue ? (uint) timeout.Value.TotalMilliseconds : DefaultCommandTimeoutMs;
             var requestId = sendRequestWithTimeoutMs(timeoutMs);
             requestIdToCallback.Add(requestId, callbackWrapper);
             return requestId;

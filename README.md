@@ -1,6 +1,13 @@
 
 # SpatialOS Unity SDK
 
+**New from June 2018: The SpatialOS Unity GDK**<br/>
+Check out the pre-alpha release of our new Unity GDK: [source code on GitHub](http://github.com/spatialos/UnityGDK). Using the Unity Entity Component System (ECS), the GDK is the next evolution in SpatialOS Unity game development. See our [blog post on ECS-powered multiplayer](https://improbable.io/games/blog/unity-gdk-our-first-steps) for more information.<br/><br/>
+**Note:** The pre-alpha GDK version is available for evaluation and feedback only. It's not yet game-development ready.
+
+---
+## About the SpatialOS Unity SDK
+
 * Repository: [github.com/spatialos/UnitySDK](https://github.com/spatialos/UnitySDK)
 * By: [Improbable](https://improbable.io/)
 * License: This repository is subject to [license](LICENSE.md)
@@ -11,6 +18,9 @@ allows you to use [Unity](https://www.unity3d.com) to create games for the [Spat
 To help you get started, there are [tutorials](docs/tutorials/learning-resources.md) to follow and [example games](docs/repositories.md) to
 experiment with.  In addition to the [SpatialOS Unity SDK documentation](docs/README.md) in this repository,  you can find out more about
 SpatialOS at [docs.improbable.io](https://docs.improbable.io).
+
+
+
 
 ## Requirements
 **Software:**
