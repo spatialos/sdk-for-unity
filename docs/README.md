@@ -3,7 +3,6 @@
 
 **New to the platform?**
 You can:
-* [take a tour of SpatialOS](get-started/tour.md)
 * read about [what SpatialOS is (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/concepts/spatialos)
 * learn how to make a game with the [Pirates tutorial](tutorials/pirates/overview.md)
 
@@ -24,7 +23,6 @@ have a combined SpatialOS and SpatialOS Unity SDK bundle. To get the separated v
 ## Documentation contents
 ### Get started
 - [Introduction to the Unity SDK](introduction.md)
-- [Take a tour of SpatialOS](get-started/tour.md)
 - Setup guides
     - [Windows](get-started/setup/win.md)
     - [macOS](get-started/setup/mac.md)

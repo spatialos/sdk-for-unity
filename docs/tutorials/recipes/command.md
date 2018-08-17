@@ -1,14 +1,13 @@
 # Implementing a command with the Unity SDK
 
-This recipe shows how to define and implement a [command (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command) with the Unity SDK. 
+This recipe shows how to define and implement a [command (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command) with the Unity SDK.
 
-We'll use the example of a game where players can take damage from the spells of wizards (similar to the
-[Wizards](../../get-started/tour.md) project). The taking of damage is implemented by wizards invoking a command
+We'll use the example of a game where players can take damage from the spells of wizard characters. The taking of damage is implemented by wizards invoking a command
 that applies damage to the player's entity.
 
 ## 1. Define the schema
 
-Commands are defined as part of a component, in schema. 
+Commands are defined as part of a component, in schema.
 
 The first component to define is `Combat`, in the file `Combat.schema`, which wizard entities have:
 
@@ -33,9 +32,9 @@ component Health {
 }
 ```
 
-This `Health` component defines a `take_damage` command which takes an argument of type 
-`DamageRequest` as input and returns an object of type `DamageResponse`. Like declaring 
-a function in a public interface, this means that any entity can invoke the `take_damage` command on 
+This `Health` component defines a `take_damage` command which takes an argument of type
+`DamageRequest` as input and returns an object of type `DamageResponse`. Like declaring
+a function in a public interface, this means that any entity can invoke the `take_damage` command on
 an entity containing the `Health` component.
 
 The input and response types aren't defined yet, so you need to define those in schema too. You can do this
@@ -70,7 +69,7 @@ In this example, let's say that'll be the Unity worker. So, to write what the co
 
 Create a new `MonoBehaviour`, `TakeDamage.cs`, and attach it to the prefab used for the player.
 
-This MonoBehaviour will listen for incoming `take_damage` command requests, execute some logic, and send 
+This MonoBehaviour will listen for incoming `take_damage` command requests, execute some logic, and send
 back a response.
 
 ### 2.2. Add required imports
@@ -103,9 +102,9 @@ In the `TakeDamage` class, require a writer:
 
 ### 2.4. Add a callback for the TakeDamage command
 
-If a component includes a command, the component writer contains a `CommandReceiver` member. This 
-exposes callbacks, one for each command, that run when the command is invoked. You should add a callback 
-for each command to listen for incoming command requests. 
+If a component includes a command, the component writer contains a `CommandReceiver` member. This
+exposes callbacks, one for each command, that run when the command is invoked. You should add a callback
+for each command to listen for incoming command requests.
 
 You can add either a synchronous or an asynchronous callback. This section will cover both options.
 
@@ -114,17 +113,17 @@ You can add either a synchronous or an asynchronous callback. This section will 
 This example adds a synchronous callback to `CommandReceiver.OnTakeDamage`.
 
 Synchronous callbacks are a straightforward way to respond to commands. When an incoming command request is
-received, a command response is generated using your callback and sent back to the sender immediately. 
+received, a command response is generated using your callback and sent back to the sender immediately.
 
-To respond to a command synchronously, implement a function with the following signature 
-`<TResponse> <Callback_Function_Name>(TRequest request, ICommandCallerInfo callerInfo)`. The `callerInfo` can be used 
+To respond to a command synchronously, implement a function with the following signature
+`<TResponse> <Callback_Function_Name>(TRequest request, ICommandCallerInfo callerInfo)`. The `callerInfo` can be used
 to access information about the command caller (its `WorkerId` and
 [attributes (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#worker-attribute)) in `CallerDetails`.
 
 Register the callback to `CommandReceiver.OnTakeDamage` in `OnEnable`, and deregister it in `OnDisable`:
 
 ```csharp
-public void OnEnable() 
+public void OnEnable()
 {
     healthWriter.CommandReceiver.OnTakeDamage.RegisterResponse(TakeDamage);
 }
@@ -148,24 +147,24 @@ public void OnDisable()
 
 Alternatively, you can add an asynchronous callback to `CommandReceiver.OnTakeDamage`.
 
-When handling commands asynchronously, the callback is passed a `ResponseHandle` object containing the method `Respond()` 
-which you use to respond to the command. 
+When handling commands asynchronously, the callback is passed a `ResponseHandle` object containing the method `Respond()`
+which you use to respond to the command.
 
-Unlike synchronous command responses, a response is not sent immediately. Instead, you can cache the `ResponseHandle` object 
-and call `ResponseHandle.Respond()` when you like. 
+Unlike synchronous command responses, a response is not sent immediately. Instead, you can cache the `ResponseHandle` object
+and call `ResponseHandle.Respond()` when you like.
 Make sure that:
 
 * you respond to a command within its timeout period
 * all code paths following the callback method eventually lead to a `ResponseHandle.Respond()` call.
 
-To respond to a command synchronously, implement a function with the following signature 
-`void <Callback_Function_Name>(ResponseHandle<Command_Name, TRequest, TResponse> responseHandle)`. 
-The `responseHandle` object contains additional information about the command sender in `callerInfo`. 
+To respond to a command synchronously, implement a function with the following signature
+`void <Callback_Function_Name>(ResponseHandle<Command_Name, TRequest, TResponse> responseHandle)`.
+The `responseHandle` object contains additional information about the command sender in `callerInfo`.
 
 Register the callback to `CommandReceiver.OnTakeDamage` in `OnEnable`, and deregister it in `OnDisable`:
 
 ```csharp
-public void OnEnable() 
+public void OnEnable()
 {
     healthWriter.CommandReceiver.OnTakeDamage.RegisterAsyncResponse(TakeDamageAsync);
 }
@@ -188,11 +187,11 @@ public void OnDisable()
 ## 3. Invoke the command
 
 You've defined the signature of `take_damage` in schema, and implemented the logic in a MonoBehaviour on the Unity worker.
-Next, the wizard should invoke this command on the player. 
+Next, the wizard should invoke this command on the player.
 
 ### 3.1. Create a DealDamage MonoBehaviour
 
-Create a new a `MonoBehaviour`, `DealDamage.cs`, to the prefab you're using for the wizard. 
+Create a new a `MonoBehaviour`, `DealDamage.cs`, to the prefab you're using for the wizard.
 
 ### 3.2. Add required imports
 
@@ -220,9 +219,9 @@ Require a component writer for the `Combat` component:
 [Require] private Combat.Writer combatWriter;
 ```
 
-The `SendCommand` method requires you to pass in a component writer. This is for the same reason that the 
-`CommandReceiver` object is defined on component writers: since an instance of this `MonoBehaviour` will be 
-enabled on at most one worker across your simulation, it prevents sending the same command more than once. 
+The `SendCommand` method requires you to pass in a component writer. This is for the same reason that the
+`CommandReceiver` object is defined on component writers: since an instance of this `MonoBehaviour` will be
+enabled on at most one worker across your simulation, it prevents sending the same command more than once.
 
 Note that you can have multiple `MonoBehaviours` on the same entity pointing to the same
 instance of the writer.
@@ -240,21 +239,21 @@ The `SendCommand` method looks like this:
 
 Let's break that down a bit.
 
-* `SendCommand()` returns an `ICommandResponseHandler` object which exposes the following methods: 
+* `SendCommand()` returns an `ICommandResponseHandler` object which exposes the following methods:
     * `OnSuccess(CommandSuccessCallback<TResponse> successCallback)` is the callback triggered if the command succeeds.
     * `OnFailure(CommandFailureCallback failureCallback)` is the callback triggered if the `StatusCode != StatusCode.Success`.
 
         This means SpatialOS can't guarantee that the command succeeded, rather than it necessarily failed.
-  
+
     You don't have to specify either of these callbacks if you don't want to.
     * `TResponse Response` is the response object, of the type defined in the schema. In this case, it's
     `DamageResponse Response`.
 * `writer` is the component writer you injected, for the reasons explained above.
-* `commandDescriptor` is a special object identifying a command. Command descriptors are generated for each command 
+* `commandDescriptor` is a special object identifying a command. Command descriptors are generated for each command
 defined in your schema, and are named as `{ComponentName}.Commands.{CommandName}.Descriptor`. So in this case, it's
 `Health.Commands.TakeDamage.Descriptor`.
 
-    To access the available list of commands you can invoke on a component, try typing "`{ComponentName}.Commands.`" 
+    To access the available list of commands you can invoke on a component, try typing "`{ComponentName}.Commands.`"
     and looking at your code completion results. (This will only work once you've run `spatial worker codegen`).
 * `request` is the request argument to the command, of the type specified in the schema. Here, that's
 `DamageRequest`.
@@ -263,14 +262,14 @@ defined in your schema, and are named as `{ComponentName}.Commands.{CommandName}
 [`TimeSpan`](https://msdn.microsoft.com/en-us/library/system.timespan(v=vs.110).aspx).
 * `commandDelivery` (optional) denotes whether the worker will attempt to short-circuit entity commands if
 possible. `CommandDelivery` is an enum: the available values are
-`CommandDelivery.RoundTrip` and `CommandDelivery.ShortCircuit`. 
-    
+`CommandDelivery.RoundTrip` and `CommandDelivery.ShortCircuit`.
+
     If you don't specify, the default value (`CommandDelivery.RoundTrip`) will be used: no short-circuiting.
 
 Use this method to invoke the `take_damage` command on the entity with the given entity ID:
 
 ```csharp
-void AttackPlayer(EntityId playerEntityId) 
+void AttackPlayer(EntityId playerEntityId)
 {
     SpatialOS.Commands
     .SendCommand(combatWriter, Health.Commands.TakeDamage.Descriptor, new DamageRequest(combatWriter.Data.attackPower), playerEntityId)
@@ -291,4 +290,3 @@ void OnDamageRequestFailure(ICommandErrorDetails response)
 
 > To find the player's entity ID, you could send a
 [query](../../interact-with-world/query-world.md).
-
