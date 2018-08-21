@@ -36,6 +36,7 @@ chmod +x worker_create.sh
 ./worker_create.sh Managed PirateShipMovement $DEST_PROJECT
 
 # Build the new worker
+cd $DEST_PROJECT
 spatial worker build PirateShipMovement --target=windows
 
 # Go back to project root
