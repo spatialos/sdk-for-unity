@@ -261,8 +261,7 @@ under `Workers`, click `Build`.
 
 If you want to improve this basic implementation, you could:
 
-* Display an error message if the connection is unsuccessful (as in the [Pirates](../../tutorials/pirates/overview.md) and
-[Wizards](../../get-started/tour.md) projects).
+* Display an error message if the connection is unsuccessful (as in the [Pirates Tutorial](../../tutorials/pirates/overview.md)).
 
 * Use 3rd-party authentication: show username and password input fields on the splash screen that call 3rd-party
 authentication before attempting to connect to SpatialOS.

@@ -34,7 +34,7 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
         * `Assets/Plugins/Improbable`
         * `Improbable.meta`
         * `spatialos.*.build.json`
-    * Add 
+    * Add
         * `workers/unity/Assets/Plugins/Improbable/Editor/Generated/`
         * `workers/unity/Assets/Plugins/Improbable/Editor/Generated.meta`
         * `workers/unity/Assets/Plugins/Improbable/Generated/`
@@ -95,7 +95,7 @@ This part of the file should now look like this:
     "tasks_filename": "Improbable/build_script/spatialos.unity.worker.build.json"
   },
   ```
-  
+
 4. Delete `spatialos_worker_packages.json` as `spatial` no longer uses this file.
 
 5. Navigate two directories up to find the `spatialos.json` file.
@@ -128,7 +128,7 @@ chmod +x ./workers/unity/Improbable/bin/macos/*
 ### 5. Update the version control ignore files
 
 Make sure your version control system (VCS) is set to; **stop ignoring** the Unity SDK directories you have copied, specifically the directories under `Assets/Plugins/Improbable`, and **ignore** some auto-generated files.
-1. Locate the VCS ignore files in your project’s root directory and `workers\unity` directory. 
+1. Locate the VCS ignore files in your project’s root directory and `workers\unity` directory.
 * For example, the VCS ignore files to check on the Pirates project on GitHub are:
     * in the `workers/unity` directory - [github.com/spatialos/PiratesTutorial/blob/master/workers/unity/.gitignore](https://github.com/spatialos/PiratesTutorial/blob/master/workers/unity/.gitignore)
     * in the root directory - [github.com/spatialos/PiratesTutorial/blob/master/.gitignore](https://github.com/spatialos/PiratesTutorial/blob/master/.gitignore)
@@ -147,7 +147,7 @@ Make sure your version control system (VCS) is set to; **stop ignoring** the Uni
 
 You need to do this for every project you migrate.
 
-**Note:** In all our starter projects (including Wizards and Pirates) the version control ignore files are not set as above, so if your project is based on any of these projects, you need to edit the VCS ignore files.
+**Note:** In all our starter projects (such as the Pirates tutorial) the version control ignore files are not set as above, so if your project is based on any of these projects, you need to edit the VCS ignore files.
 
 ### 6. Check it worked
 In the root directory of your project, check that the upgrade and migration worked by running:
