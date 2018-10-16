@@ -1,14 +1,13 @@
-# Implementing a command with the Unity SDK
+# Implementing a command with the SpatialOS SDK for Unity
 
-This recipe shows how to define and implement a [command (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command) with the Unity SDK. 
+This recipe shows how to define and implement a [command (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#command) with the SpatialOS SDK for Unity.
 
-We'll use the example of a game where players can take damage from the spells of wizards (similar to the
-[Wizards](../../get-started/tour.md) project). The taking of damage is implemented by wizards invoking a command
+We'll use the example of a game where players can take damage from the spells of wizard characters. The taking of damage is implemented by wizards invoking a command
 that applies damage to the player's entity.
 
 ## 1. Define the schema
 
-Commands are defined as part of a component, in schema. 
+Commands are defined as part of a component, in schema.
 
 The first component to define is `Combat`, in the file `Combat.schema`, which wizard entities have:
 

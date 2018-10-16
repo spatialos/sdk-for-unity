@@ -34,7 +34,6 @@ namespace Improbable.Unity.Configuration
         public const bool ShowDebugTraces = false;
 
         public const byte TcpMultiplexLevel = Worker.Defaults.TcpMultiplexLevel;
-        public const bool UseExternalIp = false;
         public const bool UseInstrumentation = true;
 
         [Obsolete("As of 12.1, this no longer does anything, and will be removed in a future release.")]

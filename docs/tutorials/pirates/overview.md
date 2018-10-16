@@ -10,7 +10,7 @@ This tutorial, based on a pirate ship game, will teach you how to develop a game
 Through adding features to the game, you'll learn about:
 
 * how to **design game features** in a way that takes advantage of SpatialOS
-* **features of SpatialOS** and its Unity SDK
+* **features of SpatialOS** and its SpatialOS SDK for Unity
 * **command-line and deployment tools** that come with SpatialOS
 * the **local development workflow**
 * how to **deploy the game locally** so you can test it, and **to the cloud** so you can play in multiplayer

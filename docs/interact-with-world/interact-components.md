@@ -17,7 +17,7 @@ MonoBehaviours must be added to the prefab associated with the entity. The metho
 be run on the current entity/GameObject. To do things to another entity/GameObject, you can
 either run a query, or expose the methods using Unity and the GameObject.
 
->  The Unity SDK changes the
+>  The SpatialOS SDK for Unity changes the
 [usual MonoBehaviour lifecycle of Unity](https://docs.unity3d.com/Manual/ExecutionOrder.html).
 Component readers and writers will be available when the `OnEnable` event function is called.
 

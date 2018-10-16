@@ -1,11 +1,11 @@
 # MonoBehaviour lifecycle
 
-## Lifecycle of Unity SDK-managed MonoBehaviours
+## Lifecycle of SpatialOS SDK for Unity-managed MonoBehaviours
 
 [Prefabs](https://docs.unity3d.com/Manual/Prefabs.html) are used to instantiate the GameObjects associated with an entity. 
 
 MonoBehaviours placed on these prefabs are subject to injection. **Any `MonoBehaviour` present on a prefab used to represent 
-a SpatialOS entity will have its lifecycle managed by the Unity SDK**. The Unity SDK will make sure that any component readers and 
+a SpatialOS entity will have its lifecycle managed by the SpatialOS SDK for Unity**. The SpatialOS SDK for Unity will make sure that any component readers and 
 writers are available for use before enabling the MonoBehaviour.
 
 This is to ensure that whenever the `MonoBehaviour` is activated, *all* of its readers and writers have their
@@ -15,7 +15,7 @@ requirements satisfied and are injected into the `MonoBehaviour`. In particular:
 * The worker has write access to  the component, if a Writer is required. Note that only one worker will have
   write access to a particular component on a particular entity at any given time.
 
-The Unity SDK will keep a `MonoBehaviour` disabled until *all* of the required fields can be injected. Once all the
+The SpatialOS SDK for Unity will keep a `MonoBehaviour` disabled until *all* of the required fields can be injected. Once all the
 requirements are satisfied, the script is enabled. If, at any point, one of the requirements is no longer true (for example
 because the worker lost write access) the script will be disabled and the required fields set to `null`. Note that a
 particular script can be disabled and re-enabled this way many times on a single `GameObject`.
@@ -42,17 +42,17 @@ It is recommended to keep readers and writers private to the `MonoBehaviour` int
 
 ## Enabling and disabling MonoBehaviours
 
-In order to manage the lifecycle of `MonoBehaviour`s, the Unity SDK uses Unity's `.enabled` flag. You should therefore
+In order to manage the lifecycle of `MonoBehaviour`s, the SpatialOS SDK for Unity uses Unity's `.enabled` flag. You should therefore
 avoid using this flag to manage which scripts are run.
 
-If you want to manually disable or enable a `MonoBehaviour`, you should use the Unity SDK to do so:
+If you want to manually disable or enable a `MonoBehaviour`, you should use the SpatialOS SDK for Unity to do so:
 
 ```csharp
 gameObject.GetEntityObject().DisableVisualizers(new []{myBehaviourToBeDisabled, myOtherBehaviourToBeDisabled});
 gameObject.GetEntityObject().TryEnableVisualizers(new []{myVisualizer, myOtherVisualiser});
 ```
 
-This former will mark a `MonoBehaviour` as manually disabled and the Unity SDK will not enable it even if all requirements
+This former will mark a `MonoBehaviour` as manually disabled and the SpatialOS SDK for Unity will not enable it even if all requirements
 for readers and writers have been satisfied. The latter will remove this mark. Note that this *won't* cause the
 `MonoBehaviour` to be enabled if it doesn't have all of its component requirements met.
 

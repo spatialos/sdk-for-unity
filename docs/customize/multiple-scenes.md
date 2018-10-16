@@ -1,6 +1,6 @@
 # Loading from multiple scenes
 
-By default, SpatialOS projects that use the Unity SDK have one scene for the UnityClient, and one scene for the UnityWorker.
+By default, SpatialOS projects that use the SpatialOS SDK for Unity have one scene for the UnityClient, and one scene for the UnityWorker.
 
 However, you can have multiple Unity scenes within a SpatialOS worker. You might want to do this, for example, if you want
 to modularise features like the game UI away from the client where entities are spawned.

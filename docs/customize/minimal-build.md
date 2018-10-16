@@ -33,6 +33,7 @@ To set up Unity to use the new build system:
   * For `spatialos.UnityClient.worker.json`, change `spatialos.unity.client.build.json` to `Improbable/build_script/spatialos.unity.client.build.experimental.json`
   * For `spatialos.UnityWorker.worker.json`, change `spatialos.unity.worker.build.experimental.json` to `Improbable/build_script/spatialos.unity.worker.build.experimental.json`
 1. In the root folder of your project, run [`spatial codegen` (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/spatial-cli/spatial-worker-codegen#spatial-worker-codegen).
+1. Locate the folder `workers/unity/Assets/Plugins/Improbable/.Modules` and rename it as `workers/unity/Assets/Plugins/Improbable/Modules`.
 1. Open your project in Unity.
 1. Open the UnityClient scene, and select the "Bootstrap" or "GameEntry" `GameObject` in the hierarchy.
 1. Remove the `DefaultTemplateProvider` component if it is there, then add the `BasicTemplateProvider` component.

@@ -2,9 +2,8 @@
 
 using System;
 using Improbable.Assets;
+using Improbable.Unity;
 using Improbable.Unity.Assets;
-using Improbable.Unity.Configuration;
-using Improbable.Unity.Core;
 using Improbable.Unity.Entity;
 using UnityEngine;
 
@@ -12,8 +11,7 @@ namespace Improbable.MinimalBuildSystem.Prefabs
 {
     public class BasicTemplateProvider : MonoBehaviour, IEntityTemplateProvider
     {
-        // These can be overridden on the command line.
-        public bool UseLocalPrefabs = true;
+        public WorkerPlatform platform;
 
         // The template provider can't be instantiated during construction as Application.isEditor doesn't work.
         private IEntityTemplateProvider templateProvider;
@@ -34,26 +32,11 @@ namespace Improbable.MinimalBuildSystem.Prefabs
 
         private IAssetLoader<GameObject> InitializeAssetLoader()
         {
-#if UNITY_EDITOR
-            UseLocalPrefabs =
-                SpatialOS.Configuration.GetCommandLineValue(CommandLineConfigNames.UseLocalPrefabs, UseLocalPrefabs);
-            if (UseLocalPrefabs)
-            {
-                return new PrefabGameObjectLoader();
-            }
-#endif
             return new ResourceGameObjectLoader();
         }
 
         private IEntityTemplateProvider InitializeTemplateProvider(IAssetLoader<GameObject> gameObjectLoader)
         {
-#if UNITY_EDITOR
-            if (UseLocalPrefabs)
-            {
-                return new AssetDatabaseTemplateProvider(
-                                                         new CachingAssetDatabase(new PreprocessingGameObjectLoader(gameObjectLoader)));
-            }
-#endif
             return new AssetDatabaseTemplateProvider(new CachingAssetDatabase(gameObjectLoader));
         }
 

@@ -8,7 +8,7 @@ Follow the [SpatialOS setup guide](https://docs.improbable.io/reference/13.0/sha
 
 ## 2. Set up Unity
 
-To use the Unity SDK, **even if you've already got Unity installed**,
+To use the SpatialOS SDK for Unity, **even if you've already got Unity installed**,
 you **must** follow these steps, because SpatialOS only works with specific versions of Unity, and
 requires specific build support.
 

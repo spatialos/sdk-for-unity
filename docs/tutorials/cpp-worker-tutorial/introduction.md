@@ -12,7 +12,7 @@ You'll implement the behaviour of pirate ships. They'll move randomly just
 like in [Lesson 3 of Pirates](../../tutorials/pirates/lesson3.md). You'll
 also add a shooting behaviour to pirate ships similar to how player ships shoot
 in [Lesson 4 of Pirates](../../tutorials/pirates/lesson4.md). This will
-let you compare the Unity SDK and workflow with its C++ counterpart.
+let you compare the SpatialOS SDK for Unity and workflow with its C++ counterpart.
 
 At the end, there are suggestions for more complex behaviours you could tackle on your own
 to reinforce what you've learned.

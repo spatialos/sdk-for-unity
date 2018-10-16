@@ -1,6 +1,6 @@
-# Creating an entity with the Unity SDK
+# Creating an entity with the SpatialOS SDK for Unity
 
-This recipe shows how to add an entity to a SpatialOS simulation with the Unity SDK.
+This recipe shows how to add an entity to a SpatialOS simulation with the SpatialOS SDK for Unity.
 
 The entity is created in a [snapshot (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/operate/snapshots), meaning it will exist when the
 simulation starts. For an example of creating an entity at runtime, see the

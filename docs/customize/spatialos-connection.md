@@ -3,7 +3,7 @@
 Connection and disconnection is already set up in all of our example projects, using the convention in `Bootstrap.cs`. See examples:
 
 * [VR Starter Project](https://github.com/spatialos/VRStarterProject/blob/master/workers/unity/Assets/Gamelogic/Global/Bootstrap.cs)
-* [Wizards](https://github.com/spatialos/Wizards/blob/master/workers/unity/Assets/Gamelogic/Core/Bootstrap.cs)
+* [Pirates Tutorial](https://github.com/spatialos/PiratesTutorial/blob/master/workers/unity/Assets/Gamelogic/Core/Bootstrap.cs)
 
 This page is for those who want to customise or learn more about the connection process.
 
@@ -12,7 +12,7 @@ Customising the connection and disconnection process allows you to do things lik
 * throw an error or try reconnecting if the first connection attempt fails
 * switch scene when SpatialOS disconnects
 * [set up command-line arguments](../customize/steam.md#3-set-up-command-line-arguments)
-* [specify assets to precache](https://github.com/spatialos/Wizards/blob/master/workers/unity/Assets/Gamelogic/Core/Bootstrap.cs)
+* [specify assets to precache](https://github.com/spatialos/PiratesTutorial/blob/master/workers/unity/Assets/Gamelogic/Core/Bootstrap.cs)
 
 ## Connect to SpatialOS
 

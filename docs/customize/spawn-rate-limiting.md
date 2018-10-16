@@ -2,9 +2,9 @@
 
 There are times when a Unity worker receives many `AddEntity` ops in a single frame, such as when it starts up,
 or when it moves into a new area with many new entities.
-The Unity SDK may spend so much time spawning new entities that the player's screen appears to hang.
+The SpatialOS SDK for Unity may spend so much time spawning new entities that the player's screen appears to hang.
 
-To help you avoid this, the Unity SDK provides a few ways to manage spawning of new entities.
+To help you avoid this, the SpatialOS SDK for Unity provides a few ways to manage spawning of new entities.
 Configure this before you connect to SpatialOS.
 If you're using one of our starter projects, customize your spawn rate limiting in `workers/unity/Assets/Gamelogic/Core/Bootstrap.cs`.
 
@@ -30,7 +30,7 @@ public void Start()
 
 ## Time based
 
-A more flexible strategy is to limit the amount of time the Unity SDK spends spawning new entities during a single frame.
+A more flexible strategy is to limit the amount of time the SpatialOS SDK for Unity spends spawning new entities during a single frame.
 
 ```
 // Allow editing from the Unity inspector.

@@ -1,9 +1,8 @@
 
-### Welcome to the SpatialOS Unity SDK documentation
+### Welcome to the SpatialOS SDK for Unity documentation
 
 **New to the platform?**
 You can:
-* [take a tour of SpatialOS](get-started/tour.md)
 * read about [what SpatialOS is (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/concepts/spatialos)
 * learn how to make a game with the [Pirates tutorial](tutorials/pirates/overview.md)
 
@@ -16,15 +15,14 @@ SpatialOS 13.0 is fine for local development and deployments using the `small` [
 See the [license](../LICENSE.md).
 
 ## Installing and upgrading
-* If you are installing SpatialOS and the SpatialOS Unity SDK for the first time, see:
-[Introduction to the Unity SDK](introduction.md).
-* If you have a version of SpatialOS and the SpatialOS Unity SDK which is earlier than SpatialOS 13.0, you
-have a combined SpatialOS and SpatialOS Unity SDK bundle. To get the separated version, see: [Upgrading to SpatialOS 13.0 and migrating to SpatialOS Unity SDK 1.0.0](migration.md).
+* If you are installing SpatialOS and the SpatialOS SDK for Unity for the first time, see:
+[Introduction to the SpatialOS SDK for Unity](introduction.md).
+* If you have a version of SpatialOS and the SpatialOS SDK for Unity which is earlier than SpatialOS 13.0, you
+have a combined SpatialOS and SpatialOS SDK for Unity bundle. To get the separated version, see: [Upgrading to SpatialOS 13.0 and migrating to SpatialOS SDK for Unity 1.0.0](migration.md).
 
 ## Documentation contents
 ### Get started
-- [Introduction to the Unity SDK](introduction.md)
-- [Take a tour of SpatialOS](get-started/tour.md)
+- [Introduction to the SpatialOS SDK for Unity](introduction.md)
 - Setup guides
     - [Windows](get-started/setup/win.md)
     - [macOS](get-started/setup/mac.md)

@@ -1,6 +1,6 @@
-# Voice over IP with the Unity SDK
+# Voice over IP with the SpatialOS SDK for Unity
 
-This recipe covers adding voice over IP (VoIP) to a SpatialOS Unity SDK multiplayer game.
+This recipe covers adding voice over IP (VoIP) to a SpatialOS SpatialOS SDK for Unity multiplayer game.
 
 You can use the [Unity Starter Project](https://github.com/spatialos/StarterProject/tree/master) as the starting point for this recipe.
 
