@@ -1,9 +1,9 @@
 # Which components your Unity worker will check out
 
-The Unity SDK manages component delivery to enhance the default behaviour.
+The SpatialOS SDK for Unity manages component delivery to enhance the default behaviour.
 For more information on the default behaviour, see [Component delivery (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#component-delivery).
 
-Your Unity SDK workers will automatically be interested in only the components that you have referenced in your scripts and prefabs.
+Your SpatialOS SDK for Unity workers will automatically be interested in only the components that you have referenced in your scripts and prefabs.
 See [below](#automatic-component-interest) for how this works.
 This automatic interest is calculated globally across all entities that your worker has checked out.
 
@@ -15,14 +15,14 @@ For example, you may reference a component that is expensive to send, and you wa
 ## Automatic component interest
 
 How does the automatic calculation work?
-For each `GameObject` associated with a SpatialOS entity, the Unity SDK figures out its component interest by:
+For each `GameObject` associated with a SpatialOS entity, the SpatialOS SDK for Unity figures out its component interest by:
 
 0. Finding each `Reader` and `Writer` field marked with the `[Require]` [attribute](../interact-with-world/interact-components.md).
 0. Finding each experimental `MonoBehaviour` component.
 
 This tracking overrides the interest configured in the worker bridge settings mentioned above.
 
-> The Unity SDK requires interest in `improbable.Position` and `improbable.Metadata` in order to
+> The SpatialOS SDK for Unity requires interest in `improbable.Position` and `improbable.Metadata` in order to
 spawn a `GameObject` that represents a SpatialOS entity. Make sure that you have set up your worker to be delivered these components.
 
 ## Customizing component interest
@@ -47,7 +47,7 @@ public class InventoryVisualizer : MonoBehaviour
 }
 ```
 
-Because of the `[Require]` attribute, the Unity SDK will calculate interest in all `Inventory`
+Because of the `[Require]` attribute, the SpatialOS SDK for Unity will calculate interest in all `Inventory`
 components. SpatialOS will send unwanted data, even if you specify that you're not interested in your [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#component-delivery).
 
 To implement the desired player selection behaviour:
@@ -55,7 +55,7 @@ To implement the desired player selection behaviour:
 1. Ensure that your `Inventory` component has `checkout_initially` set to `false` in your
 [bridge configuration (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/worker-configuration/bridge-config#components-to-check-out-initially).
 
-2. Globally disable interest in the `Inventory` component so that the Unity SDK won't calculate interest,
+2. Globally disable interest in the `Inventory` component so that the SpatialOS SDK for Unity won't calculate interest,
 even though it's marked with `[Require]`.
 
     ```
@@ -108,7 +108,7 @@ even though it's marked with `[Require]`.
     ```
 
 When the player selects a specific treasure chest your worker will become interested in it and enable `InventoryVisualizer`.
-When the player deselects the treasure chest, the Unity SDK will stop having interest in it and your worker will no
+When the player deselects the treasure chest, the SpatialOS SDK for Unity will stop having interest in it and your worker will no
 longer receive `Inventory` data for that treasure chest.
 
 ## API reference

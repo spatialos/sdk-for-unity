@@ -70,7 +70,7 @@ printed in your console output.
 Now SpatialOS is running the server-side part of the game. But for you to connect to it and play, you need to run a client.
 
 There are several ways to run a client, but the fastest one for local development is to run one through the Unity Editor.
-(SpatialOS's UnitySDK automatically hooks the client up to SpatialOS.)
+(The SpatialOS SDK for Unity automatically hooks the client up to SpatialOS.)
 
 0. Launch the Unity Editor.
 

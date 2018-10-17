@@ -266,10 +266,10 @@ from a URL and runs it.
 
 ### Loading assets
 
-UnityClients and UnityWorkers need to load assets (for example, Unity prefabs, or materials). The UnitySDK stores these assets
+UnityClients and UnityWorkers need to load assets (for example, Unity prefabs, or materials). The SpatialOS SDK for Unity stores these assets
 within an asset database, which is loaded at runtime.
 
-The UnitySDK provides two basic ways of serving your assets:
+The SpatialOS SDK for Unity provides two basic ways of serving your assets:
 
 #### Local asset database
 

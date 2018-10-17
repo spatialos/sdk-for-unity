@@ -104,7 +104,7 @@ namespace Improbable.Unity.Configuration
 
         public byte TcpMultiplexLevel { get; private set; }
 
-        public bool UseExternalIp { get; private set; }
+        public bool UseExternalIp { get; set; }
 
         public bool UseInstrumentation { get; private set; }
 
@@ -201,7 +201,7 @@ namespace Improbable.Unity.Configuration
             SendQueueCapacity = data.Networking.SendQueueCapacity;
             SteamToken = GetCommandLineValue(EditableConfigNames.SteamToken, data.Networking.SteamToken);
             TcpMultiplexLevel = GetCommandLineValue(EditableConfigNames.TcpMultiplexLevel, data.Networking.TcpMultiplexLevel);
-            UseExternalIp = GetCommandLineValue(CommandLineConfigNames.UseExternalIpForBridge, Defaults.UseExternalIp) == false; // DEV-1120: The flag is flipped for legacy reasons.
+            UseExternalIp = WorkerPlatform == WorkerPlatform.UnityClient;
             UseInstrumentation = GetCommandLineValue(EditableConfigNames.UseInstrumentation, data.Debugging.UseInstrumentation);
             UsePrefabPooling = GetCommandLineValue(EditableConfigNames.UsePrefabPooling, data.Unity.UsePrefabPooling);
 

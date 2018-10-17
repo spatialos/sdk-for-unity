@@ -89,7 +89,7 @@ and create a C# script called `SteerRandomly`.
 
 4. Just before the class declaration, add the line `[WorkerType(WorkerPlatform.UnityWorker)]`. 
 
-    This annotation, provided by the SpatialOS Unity SDK, means that when you build the project, this script will only be
+    This annotation, provided by the SpatialOS SDK for Unity, means that when you build the project, this script will only be
     included in prefabs on the `UnityWorker`.
 
     ```csharp
@@ -110,7 +110,7 @@ and create a C# script called `SteerRandomly`.
         properties, sending updates to properties, and a lot more. You'll use one of those methods in the next step.
     * It uses the `[Require]` annotation.
 
-        This annotation, also provided by the SpatialOS Unity SDK, is another way of controlling when this script is run.
+        This annotation, also provided by the SpatialOS SDK for Unity, is another way of controlling when this script is run.
 
         Workers can have read access or write access to a component. **Only one worker at a time**, regardless of whether
         it's a UnityWorker or UnityClient, can have write access to a specific component on a specific entity.

@@ -206,7 +206,25 @@ namespace Improbable.Unity.MinimalBuildSystem
                     locationPathName = workerBuildData.BuildScratchDirectory
                 };
 
-                BuildPipeline.BuildPlayer(buildPlayerOptions);
+                var buildConfigString = string.Format("WorkerPlatform={0};BuildTarget={1};BuildOptions={2}", workerPlatform,
+                    buildTarget, buildOptions);
+
+                var buildErrorMessage = BuildPipeline.BuildPlayer(buildPlayerOptions);
+
+#if UNITY_2018_1_OR_NEWER
+                if (buildErrorMessage.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
+                {
+                    throw new ApplicationException(string.Format("Failed to build player {0} due to {1} errors", buildConfigString,
+                                                                 buildErrorMessage.summary.totalErrors));
+                }
+#else
+                if (!string.IsNullOrEmpty(buildErrorMessage))
+                {
+                    throw new ApplicationException(string.Format("Failed to build player {0} due to {1}", buildConfigString,
+                                                                 buildErrorMessage));
+                }
+#endif
+                Debug.LogFormat("Built player {0} into {1}", buildConfigString, workerBuildData.BuildScratchDirectory);
 
                 var zipPath = Path.GetFullPath(Path.Combine(PlayerBuildDirectory, workerBuildData.PackageName));
 

@@ -16,6 +16,7 @@ namespace Improbable.Unity.Core
     public class WorkerConnection
     {
         private const int ReturnImmediatelyMillis = 0;
+        private static int workerConnectionIndex = 1;
 
         /// <summary>
         ///     True if a valid connection exists to SpatialOS.
@@ -175,7 +176,24 @@ namespace Improbable.Unity.Core
 
         private static IEnumerator ConnectToReceptionistAsync(WorkerConnectionParameters parameters, Action<Connection> onConnection)
         {
-            var connectionFuture = Worker.Connection.ConnectAsync(parameters.ReceptionistHost, parameters.ReceptionistPort, parameters.WorkerId, parameters.ConnectionParameters);
+            // Creating a new worker ID per connection attempt.
+            // This is because if the connection fails it will be impossible to reconnect without
+            // restarting the application.
+            string uniqueWorkerId;
+
+            if (WorkerTypeUtils.FromWorkerName(parameters.ConnectionParameters.WorkerType) == WorkerPlatform.UnityWorker)
+            {
+                // for UnityWorker, the worker ID should be unique as it will be incremented in the command line arguments.
+                uniqueWorkerId = parameters.WorkerId;
+            }
+            else
+            {
+                uniqueWorkerId = string.Format("{0}-{1}", parameters.WorkerId, workerConnectionIndex);
+
+                workerConnectionIndex++;
+            }
+
+            var connectionFuture = Worker.Connection.ConnectAsync(parameters.ReceptionistHost, parameters.ReceptionistPort, uniqueWorkerId, parameters.ConnectionParameters);
 
             // ReSharper disable once AccessToDisposedClosure
             var wait = new WaitUntil(() => connectionFuture.Get(ReturnImmediatelyMillis).HasValue);

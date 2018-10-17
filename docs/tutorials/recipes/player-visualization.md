@@ -1,4 +1,4 @@
-# Player camera visualization with the Unity SDK
+# Player camera visualization with the SpatialOS SDK for Unity
 
 This recipe covers adding a model and basic camera controls to a Player in Unity for first-person and
 third-person perspectives. This involves:

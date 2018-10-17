@@ -1,9 +1,9 @@
-# Unity SDK client connection lifecycle
+# SpatialOS SDK for Unity client connection lifecycle
 
 All online multiplayer games need to handle players connecting and disconnecting. In a SpatialOS game, player clients
 need to have an entity in the world associated with them.
 
-**This recipe gives a basic overview of the connection process with the Unity SDK**, and covers a simple
+**This recipe gives a basic overview of the connection process with the SpatialOS SDK for Unity**, and covers a simple
 implementation of client connection lifecycle:
 
 * [When a player client connects, create a new entity for them](#creating-a-player-entity-when-a-client-connects).

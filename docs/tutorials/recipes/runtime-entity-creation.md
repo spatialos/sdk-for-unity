@@ -1,6 +1,6 @@
-# Creating an entity at runtime with the Unity SDK
+# Creating an entity at runtime with the SpatialOS SDK for Unity
 
-This recipe shows how to create entities in a SpatialOS game using the SpatialOS Unity SDK.
+This recipe shows how to create entities in a SpatialOS game using the SpatialOS SpatialOS SDK for Unity.
 
 Your game world will contain entities which were defined in a snapshot, but your
 game will likely need to spawn further entities at run-time. This might occur if:
@@ -293,4 +293,4 @@ You made use of:
 
 If you are interested in other entity management functions you can find information
 on [deleting entities](../../interact-with-world/create-delete-entities.md#deleting-an-entity)
-in the Unity SDK documentation.
+in the SpatialOS SDK for Unity documentation.

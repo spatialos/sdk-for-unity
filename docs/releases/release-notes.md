@@ -1,6 +1,19 @@
 # Release notes
 
-## SpatialOS Unity SDK 2.0.1
+## SpatialOS SDK for Unity 3.0.0
+_Released: 2018-10-17_
+
+### Fixes
+* The UnityClient worker no longer tries to login with a previously-used worker ID. You will no longer see this error message:
+```
+[improbable.receptionist.ReceptionistServiceImpl] Worker trying to login with previously used worker ID: UnityClient[...]. This is not allowed, please use a unique worker ID for each login attempt
+```
+* Improved performance for EntityPrefab loading in editor playmode. You will now see a short progress bar when entering play mode while EntityPrefabs are being prepared for loading.
+
+### Breaking changes
+* We have removed the `useExternalIp` command line flag. It is now be automatically set to `true` for UnityClient and to `false` for UnityWorker. To set `UseExternalIp` directly, call `SpatialOS.Configuration.UseExternalIp` before connecting to SpatialOS.
+
+## SpatialOS SDK for Unity 2.0.1
 _Released: 2018-07-05_
 
 ### New features
@@ -9,7 +22,7 @@ _Released: 2018-07-05_
 ### Fixes
 * The timeout argument for sending commands (both schema defined commands and worker commands such as `CreateEntity`, `DeleteEntity`, ...) is now properly respected.
 
-## SpatialOS Unity SDK 2.0.0
+## SpatialOS SDK for Unity 2.0.0
 _Released: 2018-06-06_
 
 ### New features
@@ -23,7 +36,7 @@ In the unlikely event that you've used this class, please use `UnityEditor.Edito
 * We have removed the Unity 5.6 build target `StandaloneOSXIntel64` in `player-build-config.json`.
 You should change this to `StandaloneOSX`.
 
-## SpatialOS Unity SDK 1.0.1
+## SpatialOS SDK for Unity 1.0.1
 _Released: 2018-05-24_
 
 ### Fixes

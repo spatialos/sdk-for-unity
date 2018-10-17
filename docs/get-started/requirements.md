@@ -9,7 +9,7 @@ Up-to-date versions of Windows 7 and 10 work with SpatialOS.
 | Required for | |
 | --- | --- |
 | All SpatialOS development | `spatial` CLI ([download directly](setup/win.md#2-set-up-the-spatialos-cli)) <br> PowerShell 3.0 and later / Windows Command Prompt / Git BASH (For local deployments, you must use PowerShell or Command Prompt.) <br> [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/en-gb/download/details.aspx?id=48145) |
-| [Unity SDK](../introduction.md) | [Unity 2018.1.3](https://unity3d.com/get-unity/download/archive), including `Linux Build Support` and `Mac Mono Scripting Backend Support` <br> Unity versions **2017.3.0** and **2018.1.3** have been tested with SpatialOS. Other versions may work fine, but have not been extensively tested. |
+| [SpatialOS SDK for Unity](../introduction.md) | [Unity 2018.1.3](https://unity3d.com/get-unity/download/archive), including `Linux Build Support` and `Mac Mono Scripting Backend Support` <br> Unity versions **2017.3.0** and **2018.1.3** have been tested with SpatialOS. Other versions may work fine, but have not been extensively tested. |
 
 You can find installation instructions for the basic requirements in the [setup guide for Windows](setup/win.md).
 
@@ -20,7 +20,7 @@ Up-to-date versions of macOS Sierra, El Capitan and High Sierra  work with Spati
 | Required for | |
 | --- | --- |
 | All SpatialOS development | `spatial` CLI [download directly](setup/mac.md#2-set-up-the-spatialos-cli) <br> Any Bash terminal |
-| [Unity SDK](../introduction.md) | [Unity 2018.1.3](https://unity3d.com/get-unity/download/archive), including `Linux Build Support` and `Windows Build Support` |
+| [SpatialOS SDK for Unity](../introduction.md) | [Unity 2018.1.3](https://unity3d.com/get-unity/download/archive), including `Linux Build Support` and `Windows Build Support` |
 
 You can find installation instructions for the basic requirements in the [setup guide for macOS](setup/mac.md).
 

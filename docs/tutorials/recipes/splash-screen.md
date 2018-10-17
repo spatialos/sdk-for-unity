@@ -1,6 +1,6 @@
 # Creating a connection splash screen in Unity
 
-This recipe shows how to add a splash screen when a client connects to a Unity SDK project. If you're looking
+This recipe shows how to add a splash screen when a client connects to a SpatialOS SDK for Unity project. If you're looking
 for an introduction to using multiple scenes in a SpatialOS project, this is a good place to start.
 
 You can use the [Starter Project](https://github.com/spatialos/StarterProject/tree/master) as the starting point for this recipe.
@@ -261,8 +261,7 @@ under `Workers`, click `Build`.
 
 If you want to improve this basic implementation, you could:
 
-* Display an error message if the connection is unsuccessful (as in the [Pirates](../../tutorials/pirates/overview.md) and
-[Wizards](../../get-started/tour.md) projects).
+* Display an error message if the connection is unsuccessful (as in the [Pirates Tutorial](../../tutorials/pirates/overview.md)).
 
 * Use 3rd-party authentication: show username and password input fields on the splash screen that call 3rd-party
 authentication before attempting to connect to SpatialOS.

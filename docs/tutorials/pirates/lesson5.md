@@ -33,7 +33,7 @@ We call this its **checkout area**.
 
 A worker gets all updates (eg property changes, event triggers) for all entities in its checkout area - 
 and none for any entity outside that area. It has **read access** on all components of all those entities,
-and UnitySDK instantiates GameObjects in the scene for all of these entities. 
+and SpatialOS SDK for Unity instantiates GameObjects in the scene for all of these entities. 
 
 **A worker's checkout area can overlap** with another worker. This could be a problem - what if two workers
 both make a change to the same component? That's why **only one worker can have write access** on a component
@@ -137,7 +137,7 @@ Create a MonoBehaviour that runs on the UnityWorker, detecting collisions:
         {
             private void OnTriggerEnter(Collider other)
             {
-                if (other != null && other.gameObject.tag == "Cannonball")
+                if (other != null && other.gameObject.tag == SimulationSettings.CannonballTag)
                 {
 
                 }

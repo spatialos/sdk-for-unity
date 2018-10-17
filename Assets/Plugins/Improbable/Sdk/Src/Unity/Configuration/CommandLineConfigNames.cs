@@ -17,6 +17,5 @@ namespace Improbable.Unity.Configuration
         public const string MaxAssetLoadingRetries = "maxAssetLoadingRetries";
         public const string RefreshToken = "refreshToken";
         public const string UseLocalPrefabs = "useLocalPrefabs";
-        public const string UseExternalIpForBridge = "useExternalIpForBridge";
     }
 }

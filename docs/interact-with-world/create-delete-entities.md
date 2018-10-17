@@ -38,7 +38,7 @@ To create an entity, you need:
 * a component writer (for the reasons described [above](#))
 * the statement `using SpatialOS.Commands;` and `using Improbable;`
 
-> When you create an entity, the Unity SDK will automatically handle creating all relevant
+> When you create an entity, the SpatialOS SDK for Unity will automatically handle creating all relevant
 GameObjects. If you spawn a GameObject yourself, it won't be associated with an entity, and won't
 be synchronized to any other Unity workers: **it'll only exist locally**.
 
@@ -267,7 +267,7 @@ To delete an entity, you'll need:
 * the using directive `using SpatialOS.Commands`
 * the entity's `EntityId`
 
-> When you delete an entity, the Unity SDK will automatically handle deleting all relevant
+> When you delete an entity, the SpatialOS SDK for Unity will automatically handle deleting all relevant
 GameObjects.
 
 You can get the `EntityId` by:

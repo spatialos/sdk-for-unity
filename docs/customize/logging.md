@@ -1,6 +1,6 @@
 # Logging
 
-Unity SDK will send messages logged via Unity's `Debug.Log` family of functions to SpatialOS. You can view these logs
+The SpatialOS SDK for Unity will send messages logged via Unity's `Debug.Log` family of functions to SpatialOS. You can view these logs
 in your cloud deployment's web interface. See the documentation for [cloud deployments (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/operate/logs#cloud-deployments)
 for more information.
 

@@ -60,7 +60,7 @@ player's ship:
   world. Every entity needs a `Position` component. There is a special `AddPositionComponent` method because
   **Position** is a required component for all entities.
 * [**Metadata** (SpatialOS documentation)](https://docs.improbable.io/reference/13.0/shared/glossary#metadata): defines the entity type of an entity which
-  is used internally by the Unity SDK to map entities to Unity prefabs.
+  is used internally by the SpatialOS SDK for Unity to map entities to Unity prefabs.
 * **ClientConnection**: used to maintain a connection with clients. This is only needed by entities associated with a
   player client, so you don't need this component for the pirate ships.
 * **ShipControls**: used to steer the ship. You can re-use this one, as a pirate ship will need to move around too.

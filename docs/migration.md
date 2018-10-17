@@ -1,23 +1,23 @@
-# Unity SDK:
+# SpatialOS SDK for Unity:
 # Upgrading to SpatialOS 13.0
-# Migrating to the SpatialOS Unity SDK 1.0.0
+# Migrating to the SpatialOS SDK for Unity 1.0.0
 
 GitHub repository: [github.com/spatialos/UnitySDK](https://github.com/spatialos/UnitySDK)
 
-**NOTE**: The steps below tell you how to migrate from an earlier version of the SpatialOS Unity SDK
-(before SpatialOS 13.0). If you are installing SpatialOS and the Unity SDK for the first time,
-see: [Introduction to the SpatialOS Unity SDK](introduction.md).
+**NOTE**: The steps below tell you how to migrate from an earlier version of the SpatialOS SDK for Unity
+(before SpatialOS 13.0). If you are installing SpatialOS and the SpatialOS SDK for Unity for the first time,
+see: [Introduction to the SpatialOS SDK for Unity](introduction.md).
 
-SpatialOS 13.0 splits SpatialOS and the SpatialOS Unity SDK to make SpatialOS available as a separate product to the SpatialOS Unity SDK.
-At the time of initial release, the functionality of SpatialOS 13.0 and the SpatialOS Unity SDK 1.0.0 is the same as the combined SpatialOS and SpatialOS Unity SDK 12.2.1. Subsequent patch releases may make the functionality of the versions slightly different.
-If you want to use the SpatialOS Unity SDK 1.0.0, you need to upgrade your SpatialOS version to 13.0 and
-migrate your Unity SDK version to 1.0.0.
+SpatialOS 13.0 splits SpatialOS and the SpatialOS SDK for Unity to make SpatialOS available as a separate product to the SpatialOS SDK for Unity.
+At the time of initial release, the functionality of SpatialOS 13.0 and the SpatialOS SDK for Unity 1.0.0 is the same as the combined SpatialOS and SpatialOS SDK for Unity 12.2.1. Subsequent patch releases may make the functionality of the versions slightly different.
+If you want to use the SpatialOS SDK for Unity 1.0.0, you need to upgrade your SpatialOS version to 13.0 and
+migrate your SpatialOS SDK for Unity version to 1.0.0.
 
 Follow the steps below for every SpatialOS Unity project you want to upgrade and migrate.
 
 ## Quick guide
 1. Run `spatial clean`.
-1. Clone the [SpatialOS Unity SDK GitHub repository](https://github.com/spatialos/UnitySDK).
+1. Clone the [SpatialOS SDK for Unity GitHub repository](https://github.com/spatialos/UnitySDK).
 1. From the cloned repository, move the `Assets` and `Improbable` directories into your project’s Unity worker directory (this is usually `<root>/workers/unity`).
 	If you are asked whether to merge or replace the `Assets` folder, select `merge` otherwise you will delete the assets that your game depends upon.
 1. Still in the Unity worker directory, edit the `spatialos.UnityClient.worker.json` file to remove `"generated_build_scripts_type":"unity"` completely
@@ -53,8 +53,8 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
 Note: It’s very important you start by running `spatial clean`. If you don’t, files won’t be cleaned up properly and
 may cause issues with the new version.
 
-### 2. Clone or download the SpatialOS Unity SDK (1.0.0)
-Get the SpatialOS Unity SDK by cloning the [SpatialOS Unity SDK GitHub repository](https://github.com/spatialos/UnitySDK).
+### 2. Clone or download the SpatialOS SDK for Unity (1.0.0)
+Get the SpatialOS SDK for Unity by cloning the [SpatialOS SDK for Unity GitHub repository](https://github.com/spatialos/UnitySDK).
 &nbsp;
 Either follow the **Clone or download** instructions on the web page or clone using the command line.
 (See the [git-scm](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) website for
@@ -127,7 +127,7 @@ chmod +x ./workers/unity/Improbable/bin/macos/*
 
 ### 5. Update the version control ignore files
 
-Make sure your version control system (VCS) is set to; **stop ignoring** the Unity SDK directories you have copied, specifically the directories under `Assets/Plugins/Improbable`, and **ignore** some auto-generated files.
+Make sure your version control system (VCS) is set to; **stop ignoring** the SpatialOS SDK for Unity directories you have copied, specifically the directories under `Assets/Plugins/Improbable`, and **ignore** some auto-generated files.
 1. Locate the VCS ignore files in your project’s root directory and `workers\unity` directory. 
 * For example, the VCS ignore files to check on the Pirates project on GitHub are:
     * in the `workers/unity` directory - [github.com/spatialos/PiratesTutorial/blob/master/workers/unity/.gitignore](https://github.com/spatialos/PiratesTutorial/blob/master/workers/unity/.gitignore)
@@ -147,7 +147,7 @@ Make sure your version control system (VCS) is set to; **stop ignoring** the Uni
 
 You need to do this for every project you migrate.
 
-**Note:** In all our starter projects (including Wizards and Pirates) the version control ignore files are not set as above, so if your project is based on any of these projects, you need to edit the VCS ignore files.
+**Note:** In all our starter projects (such as the Pirates tutorial) the version control ignore files are not set as above, so if your project is based on any of these projects, you need to edit the VCS ignore files.
 
 ### 6. Check it worked
 In the root directory of your project, check that the upgrade and migration worked by running:
