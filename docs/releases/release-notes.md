@@ -1,14 +1,17 @@
 # Release notes
 
-## Unreleased changes
+## SpatialOS SDK for Unity 3.0.0
+_Released: 2018-10-17_
 
 ### Fixes
 * The UnityClient worker no longer tries to login with a previously-used worker ID. You will no longer see this error message:
 ```
 [improbable.receptionist.ReceptionistServiceImpl] Worker trying to login with previously used worker ID: UnityClient[...]. This is not allowed, please use a unique worker ID for each login attempt
 ```
-* We have removed the `useExternalIp` command line flag. It is now be automatically set to `true` for UnityClient and to `false` for UnityWorker. To set `UseExternalIp` directly, call `SpatialOS.Configuration.UseExternalIp` before connecting to SpatialOS.
 * Improved performance for EntityPrefab loading in editor playmode. You will now see a short progress bar when entering play mode while EntityPrefabs are being prepared for loading.
+
+### Breaking changes
+* We have removed the `useExternalIp` command line flag. It is now be automatically set to `true` for UnityClient and to `false` for UnityWorker. To set `UseExternalIp` directly, call `SpatialOS.Configuration.UseExternalIp` before connecting to SpatialOS.
 
 ## SpatialOS SDK for Unity 2.0.1
 _Released: 2018-07-05_
