@@ -1,5 +1,10 @@
 # Release notes
 
+## Unreleased changes
+
+### New features
+* We have upgraded to use SpatialOS [13.3.0](https://docs.improbable.io/reference/13.3/releases/release-notes#13-3-0).
+
 ## SpatialOS SDK for Unity 3.0.0
 _Released: 2018-10-17_
 
