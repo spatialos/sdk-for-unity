@@ -248,6 +248,18 @@
             Invokes the global client error hook to handle an exception.
             </summary>
         </member>
+        <member name="T:Improbable.Worker.ComponentMetaclassException`1">
+            <summary>
+            Exception used to represent an error when a component metaclass is unregistered. A helper
+            used to construct an ArgumentException with a predefined error message.
+            </summary>
+        </member>
+        <member name="T:Improbable.Worker.CommandMetaclassException`1">
+            <summary>
+            Exception used to represent an error when a command metaclass is unregistered. A helper
+            used to construct an ArgumentException with a predefined error message.
+            </summary>
+        </member>
         <member name="T:Improbable.Worker.IComponentMetaclass">
             <summary>
             Interface representing a particular component. The generated code will contain a metaclass
@@ -500,6 +512,9 @@
             component. Sending the acknowledgement signifies that this worker is ready to lose authority
             over the component for the given entity.
             </summary>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Connection.SendComponentUpdate``1(Improbable.EntityId,Improbable.Worker.IComponentUpdate{``0},System.Boolean)">
             <summary>
@@ -513,6 +528,9 @@
             modify it later. The legacyCallbackSemantics parameter is deprecated and exists for
             legacy compatibility only. It will be removed soon and should not be used.
             </remarks>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Connection.SendCommandRequest``1(Improbable.EntityId,Improbable.Worker.ICommandRequest{``0},Improbable.Collections.Option{System.UInt32},Improbable.Worker.CommandParameters)">
             <summary>
@@ -526,6 +544,9 @@
             sent; <c>SendCommandRequest(request.DeepCopy())</c> if you intend to modify the object
             later.
             </remarks>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Connection.SendCommandResponse``1(Improbable.Worker.RequestId{Improbable.Worker.IncomingCommandRequest{``0}},Improbable.Worker.ICommandResponse{``0})">
             <summary>
@@ -538,6 +559,9 @@
             is sent; <c>SendCommandResponse(response.DeepCopy())</c> if you intend to modify the
             object later.
             </remarks>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Connection.SendCommandFailure``1(Improbable.Worker.RequestId{Improbable.Worker.IncomingCommandRequest{``0}},System.String)">
             <summary>
@@ -549,6 +573,9 @@
             The calling worker will receive a command response with status code
             StatusCode.ApplicationError.
             </remarks>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Connection.SetProtocolLoggingEnabled(System.Boolean)">
             <summary>
@@ -559,6 +586,16 @@
             <remarks>
             Note that logs from any previous protocol logging sessions will be overwritten.
             </remarks>
+        </member>
+        <member name="T:Improbable.Worker.Constants">
+            <summary>
+            A struct to contain constants that can be shared in Improbable.Worker.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.Constants.CoreSdkDll">
+            <summary>
+            Constant used to alter between static/dynamic linking.
+            </summary>
         </member>
         <member name="F:Improbable.Worker.StatusCode.Success">
             <summary>The request was successfully executed and returned a response.</summary>
@@ -945,12 +982,18 @@
             Registers a callback to be invoked when a particular component is added to an existing
             entity in the worker's view of the sumulation.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnRemoveComponent``1(System.Action{Improbable.Worker.RemoveComponentOp})">
             <summary>
             Registers a callback to be invoked when a particular component is removed from an
             existing entity in the worker's view of the simulation.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnAuthorityChange``1(System.Action{Improbable.Worker.AuthorityChangeOp})">
             <summary>
@@ -958,23 +1001,35 @@
             particular component for some entity, or when the worker's authority over that component
             is revoked.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnComponentUpdate``1(System.Action{Improbable.Worker.ComponentUpdateOp{``0}})">
             <summary>
             Registers a callback to be invoked when a particular component is updated for an entity.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnCommandRequest``1(System.Action{Improbable.Worker.CommandRequestOp{``0}})">
             <summary>
             Registers a callback to be invoked when a command request is received for a particular
             component.
             </summary>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.OnCommandResponse``1(System.Action{Improbable.Worker.CommandResponseOp{``0}})">
             <summary>
             Registers a callback to be invoked when a command response is received for a particular
             component.
             </summary>
+            <exception cref="T:System.ArgumentException">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dispatcher.Remove(System.UInt64)">
             <summary>
@@ -1009,6 +1064,9 @@
             <summary>
             Returns the component ID of a given component.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Dynamic.GetComponentIds">
             <summary>
@@ -1045,23 +1103,35 @@
             Retrieves data for the given component. Returns an empty option if the entity does not have the
             given component.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Entity.Add``1(Improbable.Worker.IComponentData{``0})">
             <summary>
             Creates the given component with initial data. Has no effect if the entity already has
             the given component.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Entity.Update``1(Improbable.Worker.IComponentUpdate{``0})">
             <summary>
             Applies an update to the given component. Has no effect if the entity does not have the
             given component.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Entity.Remove``1">
             <summary>
             Removes a component.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Entity.GetComponentIds">
             <summary>
@@ -1204,6 +1274,47 @@
             <returns>A future object for the connection.</returns>
             <seealso cref="M:Improbable.Worker.Locator.GetDeploymentListAsync"/>
         </member>
+        <member name="T:Improbable.Worker.Alpha.Locator">
+            <summary>
+            A client which can be used to connect to a SpatialOS deployment via a locator service.
+            This is the new flow used to connect a local worker to a cloud deployment using a player
+            identity token and login token.
+            </summary>
+            <remarks>
+            This object should not be used concurrently by multiple threads.
+            </remarks>
+        </member>
+        <member name="M:Improbable.Worker.Alpha.Locator.#ctor(System.String,Improbable.Worker.Alpha.LocatorParameters)">
+            <summary>
+            Creates a client for the locator service.
+            </summary>
+            <param name="hostname">The hostname of the locator service. Typically
+            "locator.improbable.io".</param>
+            <param name="locatorParameters">The parameters for the locator service.</param>
+        </member>
+        <member name="M:Improbable.Worker.Alpha.Locator.Dispose">
+            <inheritdoc cref="T:System.IDisposable"/>
+        </member>
+        <member name="F:Improbable.Worker.Alpha.LocatorParameters.PlayerIdentity">
+            <summary>
+            Parameters used to authenticate. Usually obtained from a game authentication server.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.Alpha.LocatorParameters.Logging">
+            <summary>
+            Parameters for configuring logging.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.Alpha.LocatorParameters.UseInsecureConnection">
+            <summary>
+            Whether to use an insecure (non-TLS) connection for local development.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.Alpha.LocatorParameters.EnableLogging">
+            <summary>
+            Whether to enable logging for the Locator flow.
+            </summary>
+        </member>
         <member name="T:Improbable.Worker.HistogramMetric">
             <summary>
             A histogram metric tracks observations of a given value by bucket. This corresponds to a
@@ -1332,6 +1443,11 @@
             Timeout for the connection to SpatialOS to be established.
             </summary>
         </member>
+        <member name="F:Improbable.Worker.NetworkParameters.DefaultCommandTimeoutMillis">
+            <summary>
+            Default timeout for worker commands if one is not specified when command is sent.
+            </summary>
+        </member>
         <member name="F:Improbable.Worker.ProtocolLoggingParameters.LogPrefix">
             <summary>
             Log file names are prefixed with this prefix, are numbered, and have the extension .log.
@@ -1346,6 +1462,21 @@
         <member name="F:Improbable.Worker.ProtocolLoggingParameters.MaxLogFileSizeBytes">
             <summary>
             Once the size of a log file reaches this size, a new log file is created.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.ThreadAffinityParameters.ReceiveThreadsAffinityMask">
+            <summary>
+            Thread affinity mask for all SpatialOS threads related to receiving and processing ops.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.ThreadAffinityParameters.SendThreadsAffinityMask">
+            <summary>
+            Thread affinity mask for all SpatialOS threads related to sending ops.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.ThreadAffinityParameters.TemporaryThreadsAffinityMask">
+            <summary>
+            Thread affinity mask for all temporary, short-lived SpatialOS threads.
             </summary>
         </member>
         <member name="F:Improbable.Worker.ConnectionParameters.WorkerType">
@@ -1392,6 +1523,14 @@
         <member name="F:Improbable.Worker.ConnectionParameters.EnableProtocolLoggingAtStartup">
             <summary>
             Whether to enable protocol logging at startup.
+            </summary>
+        </member>
+        <member name="F:Improbable.Worker.ConnectionParameters.ThreadAffinity">
+            <summary>
+            Parameters for configuring thread affinity. Affinity masks are bit masks where
+            having 1 in the nth least significant position means the thread will be permitted to
+            run on the nth core. If an affinity mask is set to zero, the group of threads using
+            that mask will have no thread affinity.
             </summary>
         </member>
         <member name="F:Improbable.Worker.LoginTokenCredentials.Token">
@@ -1599,6 +1738,9 @@
             Helper function that checks if the worker has authority over a particular component of a
             particular entity.
             </summary>
+            <exception cref="T:Improbable.Worker.ComponentMetaclassException`1">
+            If a component is unregistered.
+            </exception>
         </member>
         <member name="M:Improbable.Worker.Internal.Callbacks`1.UpdateCallbacks">
             <summary>
@@ -1657,21 +1799,17 @@
             Returns null if the componentId is unknown.
             </summary>
         </member>
-        <member name="M:Improbable.Worker.Internal.ComponentDatabase.MetaclassToId``1(System.String)">
+        <member name="M:Improbable.Worker.Internal.ComponentDatabase.MetaclassToId``1">
             <summary>
             Returns the component ID associated with a component metaclass.
+            Returns null if the metaclass is unknown.
             </summary>
-            <exception cref="T:System.ArgumentException">
-            <typeparamref name="C"/> is not a known metaclass.
-            </exception>
         </member>
-        <member name="M:Improbable.Worker.Internal.ComponentDatabase.CommandMetaclassToId``1(System.String)">
+        <member name="M:Improbable.Worker.Internal.ComponentDatabase.CommandMetaclassToId``1">
             <summary>
             Returns the component ID associated with a command metaclass.
+            Returns null if the metaclass is unknown.
             </summary>
-            <exception cref="T:System.ArgumentException">
-            <typeparamref name="C"/> is not a known metaclass.
-            </exception>
         </member>
     </members>
 </doc>
