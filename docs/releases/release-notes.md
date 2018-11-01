@@ -1,7 +1,7 @@
 # Release notes
 
 ## SpatialOS SDK for Unity 3.1.0
-_Released: 2018-10-31_
+_Released: 2018-11-01_
 
 ### New features
 * We have upgraded to use SpatialOS [13.3.0](https://docs.improbable.io/reference/13.3/releases/release-notes#13-3-0).
