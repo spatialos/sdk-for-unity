@@ -16,7 +16,7 @@ migrate your SpatialOS SDK for Unity version to 1.0.0.
 Follow the steps below for every SpatialOS Unity project you want to upgrade and migrate.
 
 ## Quick guide
-1. Run `spatial clean`.
+1. Run `spatial worker clean`.
 1. Clone the [SpatialOS SDK for Unity GitHub repository](https://github.com/spatialos/UnitySDK).
 1. From the cloned repository, move the `Assets` and `Improbable` directories into your project’s Unity worker directory (this is usually `<root>/workers/unity`).
 	If you are asked whether to merge or replace the `Assets` folder, select `merge` otherwise you will delete the assets that your game depends upon.
@@ -27,7 +27,7 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
 1. Delete the `spatialos_worker_packages.json` file.
 1. In the root of your project, edit the `spatialos.json` file in two places so that `"version"` is `“13.0.0”`.
 1. Set the file permissions to executable in `workers/unity/Improbable/bin/macos/`.
-1. Run `spatial clean` (again).
+1. Run `spatial worker clean` (again).
 1. Run `spatial worker build`.
 1. In your project’s root directory and `workers/unity` directory, edit the following lines in the version control system (VCS) ignore files:
     * Delete
@@ -49,8 +49,8 @@ and to replace `"spatialos.unity.worker.build.json"` with `"Improbable/build_scr
 
 ### 1. Clean up your existing project
 1. Open a terminal window and `cd` to the root directory of your project.
-2. Run `spatial clean`.
-Note: It’s very important you start by running `spatial clean`. If you don’t, files won’t be cleaned up properly and
+2. Run `spatial worker clean`.
+Note: It’s very important you start by running `spatial worker clean`. If you don’t, files won’t be cleaned up properly and
 may cause issues with the new version.
 
 ### 2. Clone or download the SpatialOS SDK for Unity (1.0.0)
@@ -115,7 +115,7 @@ The file should now look similar to this:
 }
 ```
 
-6. In the root directory of your project, run `spatial clean` (again).
+6. In the root directory of your project, run `spatial worker clean` (again).
 
 ### 4. Make sure the file permissions are correct
 
@@ -153,7 +153,7 @@ You need to do this for every project you migrate.
 In the root directory of your project, check that the upgrade and migration worked by running:
 `spatial worker build`.
 
-It’s worked when you see `'spatial build UnityWorker UnityClient' succeeded` (or `'spatial.exe build UnityWorker UnityClient' succeeded`).
+It’s worked when you see `'spatial worker build' succeeded`.
 
 Please note that, due to outdated references in your `<root>\workers\unity\Library` folder, you may see errors reported despite your build ultimately succeeding. If you run `spatial worker build` again these should no longer appear.
 
