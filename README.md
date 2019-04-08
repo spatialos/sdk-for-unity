@@ -4,7 +4,7 @@
 
 **April 2019: The SDK for Unity is now [deprecated](https://docs.improbable.io/reference/latest/shared/release-policy#maturity-stages)**<br/>
 Please start development of any new projects using the [SpatialOS Game Development Kit (GDK) for Unity](https://docs.improbable.io/unity/latest/welcome).
-Existing SDK for Unity customers can continue development of their current SpatialOS projects. There will be no new feature development or bug fixes on the SDK for Unity. Please contact us on [Discord](https://discordapp.com/invite/SCZTCYm) or our [Forums](https://forums.improbable.io/) if you have any questions.
+Existing SDK for Unity customers can continue development of their current SpatialOS projects, with support for critical bug fixes on a per-case basis. There will be no new feature development on the SDK for Unity. Please contact us on [Discord](https://discordapp.com/invite/SCZTCYm) or our [Forums](https://forums.improbable.io/) if you have any questions.
 
 ---
 ## About the SpatialOS SDK for Unity
