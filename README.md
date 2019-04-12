@@ -1,7 +1,12 @@
 # SpatialOS SDK for Unity
 
-**New from October 2018: The SpatialOS GDK for Unity**<br/>
-Check out the alpha release of our [SpatialOS Game Development Kit (GDK) for Unity](https://docs.improbable.io/unity/latest/welcome). Using the Unity Entity Component System (ECS), the GDK is the next evolution in developing SpatialOS games in Unity. The SpatialOS GDK for Unity is designed to replace the SpatialOS SDK for Unity and we recommend using it over using the SDK for new game projects. See our [blog post anouncement](https://improbable.io/games/blog/spatialos-gdk-for-unity-launch?utm_medium=docs&utm_source=onboarding&utm_campaign=spatialos-gdk-unity-launch&utm_content=10-oct) for more information.
+## April 2019: Stopped development for the SDK for Unity.
+
+We have stopped development for the SDK for Unity and will not support new projects using the SDK. If you want to get started with SpatialOS using Unity, please use the [SpatialOS Game Development Kit (GDK) for Unity](https://docs.improbable.io/unity/latest/welcome).
+The [GDK](https://github.com/spatialos/gdk-for-unity) is publicly available, integrates with the Unity ECS and provides faster iteration times. Check out the [FPS Starter Project](https://docs.improbable.io/unity/alpha/projects/fps/overview) or the [Blank Starter Project](https://docs.improbable.io/unity/alpha/projects/blank/overview) to get started quickly!
+
+Existing SDK for Unity customers can continue development of their current SpatialOS projects, but are strongly encouraged to upgrade to the GDK as soon as possible. 
+Please contact us on [Discord](https://discordapp.com/invite/SCZTCYm) or our [Forums](https://forums.improbable.io/), if you have any questions.
 
 ---
 ## About the SpatialOS SDK for Unity
